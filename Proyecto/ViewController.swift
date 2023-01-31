@@ -33,6 +33,9 @@ class ViewController: UIViewController {
             request.httpMethod = "POST"
             request.httpBody = finalBody
             
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+            
             //Enviamos los datos
             URLSession.shared.dataTask(with: request){
                 (data, response, error) in
