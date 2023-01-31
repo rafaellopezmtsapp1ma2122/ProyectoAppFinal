@@ -13,8 +13,6 @@
 		0D37699C2987B72300C02544 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D37699A2987B72300C02544 /* Main.storyboard */; };
 		0D37699E2987B72400C02544 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D37699D2987B72400C02544 /* Assets.xcassets */; };
 		0D3769A12987B72400C02544 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D37699F2987B72400C02544 /* LaunchScreen.storyboard */; };
-		0D3769A92987B96500C02544 /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3769A82987B96500C02544 /* CheckViewController.swift */; };
-		0D4F54CA29890D1C00097768 /* loadScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4F54C929890D1C00097768 /* loadScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +24,6 @@
 		0D37699D2987B72400C02544 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D3769A02987B72400C02544 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D3769A22987B72400C02544 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0D3769A82987B96500C02544 /* CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
-		0D4F54C929890D1C00097768 /* loadScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +63,6 @@
 				0D37699D2987B72400C02544 /* Assets.xcassets */,
 				0D37699F2987B72400C02544 /* LaunchScreen.storyboard */,
 				0D3769A22987B72400C02544 /* Info.plist */,
-				0D3769A82987B96500C02544 /* CheckViewController.swift */,
-				0D4F54C929890D1C00097768 /* loadScreen.swift */,
 			);
 			path = Proyecto;
 			sourceTree = "<group>";
@@ -145,9 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D3769992987B72300C02544 /* ViewController.swift in Sources */,
-				0D3769A92987B96500C02544 /* CheckViewController.swift in Sources */,
 				0D3769952987B72300C02544 /* AppDelegate.swift in Sources */,
-				0D4F54CA29890D1C00097768 /* loadScreen.swift in Sources */,
 				0D3769972987B72300C02544 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

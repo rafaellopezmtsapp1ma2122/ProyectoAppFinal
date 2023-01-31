@@ -18,7 +18,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 232" translatesAutoresizingMaskIntoConstraints="NO" id="8yl-Jm-Yfl">
                                 <rect key="frame" x="77" y="244" width="260" height="34"/>
                             </imageView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DWV-Gr-mwD">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="DWV-Gr-mwD">
                                 <rect key="frame" x="62" y="412" width="290" height="4"/>
                                 <color key="tintColor" red="0.91175574059999998" green="0.86731261010000005" blue="0.499614954" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.94999999999999996" height="1"/>
