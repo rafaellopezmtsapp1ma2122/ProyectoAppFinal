@@ -7,13 +7,13 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //autoUpdate()
-        //let nib = UINib(nibName: "DemoTableViewCell", bundle: nil)
-        //tableView.register(nib, forCellReuseIdentifier: "DemoTableViewCell")
-        //super.viewDidLoad()
-        //tableView.delegate = self
-        //tableView.dataSource = self
-        //self.tableView.reloadData()
+        autoUpdate()
+        let nib = UINib(nibName: "DemoTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "DemoTableViewCell")
+        super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.tableView.reloadData()
     }
     
 
@@ -71,7 +71,7 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         // Crear URL
         var image: UIImage?
      
-            do {
+          /*  do {
                 let data = try Data(contentsOf: url!) // Crear objeto con los datos de la imagen
                 image = UIImage(data: data) // Crear una image a partir de los datos
                 cell.objImage.image = image
@@ -79,6 +79,7 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 cell.objImage.backgroundColor = .black
                 print("Error al descargar imagen")
             }
+           */
         return cell
     }
     
