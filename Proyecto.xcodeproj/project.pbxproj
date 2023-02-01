@@ -17,7 +17,7 @@
 		0DD6273B298A58070038BCE2 /* DemoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DD62739298A58070038BCE2 /* DemoTableViewCell.xib */; };
 		0DD6273D298A5A8D0038BCE2 /* item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6273C298A5A8D0038BCE2 /* item.swift */; };
 		0DD62741298A5DB30038BCE2 /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD62740298A5DB30038BCE2 /* homeViewController.swift */; };
-		0DD62745298A65D50038BCE2 /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD62744298A65D50038BCE2 /* registerViewController.swift */; };
+		0DD6274B298A6CD40038BCE2 /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6274A298A6CD40038BCE2 /* registerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,7 @@
 		0DD62739298A58070038BCE2 /* DemoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoTableViewCell.xib; sourceTree = "<group>"; };
 		0DD6273C298A5A8D0038BCE2 /* item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = item.swift; sourceTree = "<group>"; };
 		0DD62740298A5DB30038BCE2 /* homeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
-		0DD62744298A65D50038BCE2 /* registerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
+		0DD6274A298A6CD40038BCE2 /* registerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +77,7 @@
 				0DD62739298A58070038BCE2 /* DemoTableViewCell.xib */,
 				0DD6273C298A5A8D0038BCE2 /* item.swift */,
 				0DD62740298A5DB30038BCE2 /* homeViewController.swift */,
-				0DD62744298A65D50038BCE2 /* registerViewController.swift */,
+				0DD6274A298A6CD40038BCE2 /* registerViewController.swift */,
 			);
 			path = Proyecto;
 			sourceTree = "<group>";
@@ -160,7 +160,7 @@
 				0DD6273D298A5A8D0038BCE2 /* item.swift in Sources */,
 				0DD6273A298A58070038BCE2 /* DemoTableViewCell.swift in Sources */,
 				0D3769972987B72300C02544 /* SceneDelegate.swift in Sources */,
-				0DD62745298A65D50038BCE2 /* registerViewController.swift in Sources */,
+				0DD6274B298A6CD40038BCE2 /* registerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
