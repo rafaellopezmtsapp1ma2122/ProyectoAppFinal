@@ -123,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="163.768115942029" y="65.625"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="1QG-LN-3uc">
             <objects>
-                <viewController id="nYZ-si-7AD" sceneMemberID="viewController">
+                <viewController id="nYZ-si-7AD" customClass="homeViewController" customModule="Proyecto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dCd-WS-P0S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,6 +172,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Vectorhome" id="kOH-jb-dgR"/>
+                    <connections>
+                        <outlet property="tableView" destination="qng-l8-1T7" id="HmN-I5-dkj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mpc-K4-yU4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -307,10 +310,10 @@
             </objects>
             <point key="canvasLocation" x="2015.9420289855075" y="807.58928571428567"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="IiD-uf-1wK">
             <objects>
-                <viewController id="vWe-QC-qiV" customClass="ViewController" customModule="Proyecto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vWe-QC-qiV" customClass="registerViewController" customModule="Proyecto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4wg-p9-vuj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
