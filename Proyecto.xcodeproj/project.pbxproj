@@ -13,8 +13,8 @@
 		0D37699C2987B72300C02544 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D37699A2987B72300C02544 /* Main.storyboard */; };
 		0D37699E2987B72400C02544 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D37699D2987B72400C02544 /* Assets.xcassets */; };
 		0D3769A12987B72400C02544 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D37699F2987B72400C02544 /* LaunchScreen.storyboard */; };
-		0DD6273A298A58070038BCE2 /* DemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD62738298A58070038BCE2 /* DemoTableViewCell.swift */; };
-		0DD6273B298A58070038BCE2 /* DemoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DD62739298A58070038BCE2 /* DemoTableViewCell.xib */; };
+		0DA8283E298BAF730015707F /* DemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8283D298BAF730015707F /* DemoTableViewCell.swift */; };
+		0DA82840298BAF850015707F /* DemoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DA8283F298BAF850015707F /* DemoTableViewCell.xib */; };
 		0DD6273D298A5A8D0038BCE2 /* item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6273C298A5A8D0038BCE2 /* item.swift */; };
 		0DD62741298A5DB30038BCE2 /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD62740298A5DB30038BCE2 /* homeViewController.swift */; };
 		0DD6274B298A6CD40038BCE2 /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6274A298A6CD40038BCE2 /* registerViewController.swift */; };
@@ -30,8 +30,8 @@
 		0D37699D2987B72400C02544 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D3769A02987B72400C02544 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D3769A22987B72400C02544 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0DD62738298A58070038BCE2 /* DemoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTableViewCell.swift; sourceTree = "<group>"; };
-		0DD62739298A58070038BCE2 /* DemoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoTableViewCell.xib; sourceTree = "<group>"; };
+		0DA8283D298BAF730015707F /* DemoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewCell.swift; sourceTree = "<group>"; };
+		0DA8283F298BAF850015707F /* DemoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoTableViewCell.xib; sourceTree = "<group>"; };
 		0DD6273C298A5A8D0038BCE2 /* item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = item.swift; sourceTree = "<group>"; };
 		0DD62740298A5DB30038BCE2 /* homeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
 		0DD6274A298A6CD40038BCE2 /* registerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
@@ -75,12 +75,12 @@
 				0D37699D2987B72400C02544 /* Assets.xcassets */,
 				0D37699F2987B72400C02544 /* LaunchScreen.storyboard */,
 				0D3769A22987B72400C02544 /* Info.plist */,
-				0DD62738298A58070038BCE2 /* DemoTableViewCell.swift */,
-				0DD62739298A58070038BCE2 /* DemoTableViewCell.xib */,
 				0DD6273C298A5A8D0038BCE2 /* item.swift */,
 				0DD62740298A5DB30038BCE2 /* homeViewController.swift */,
 				0DD6274A298A6CD40038BCE2 /* registerViewController.swift */,
 				0DD6274C298A7A8E0038BCE2 /* profileViewController.swift */,
+				0DA8283D298BAF730015707F /* DemoTableViewCell.swift */,
+				0DA8283F298BAF850015707F /* DemoTableViewCell.xib */,
 			);
 			path = Proyecto;
 			sourceTree = "<group>";
@@ -145,7 +145,7 @@
 			files = (
 				0D3769A12987B72400C02544 /* LaunchScreen.storyboard in Resources */,
 				0D37699E2987B72400C02544 /* Assets.xcassets in Resources */,
-				0DD6273B298A58070038BCE2 /* DemoTableViewCell.xib in Resources */,
+				0DA82840298BAF850015707F /* DemoTableViewCell.xib in Resources */,
 				0D37699C2987B72300C02544 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,9 +159,9 @@
 			files = (
 				0D3769992987B72300C02544 /* ViewController.swift in Sources */,
 				0DD62741298A5DB30038BCE2 /* homeViewController.swift in Sources */,
+				0DA8283E298BAF730015707F /* DemoTableViewCell.swift in Sources */,
 				0D3769952987B72300C02544 /* AppDelegate.swift in Sources */,
 				0DD6273D298A5A8D0038BCE2 /* item.swift in Sources */,
-				0DD6273A298A58070038BCE2 /* DemoTableViewCell.swift in Sources */,
 				0D3769972987B72300C02544 /* SceneDelegate.swift in Sources */,
 				0DD6274D298A7A8E0038BCE2 /* profileViewController.swift in Sources */,
 				0DD6274B298A6CD40038BCE2 /* registerViewController.swift in Sources */,

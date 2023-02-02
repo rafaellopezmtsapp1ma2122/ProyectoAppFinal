@@ -2,11 +2,13 @@ import UIKit
 
 class homeViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
 
+    let cellSpacingHeight: CGFloat = 5
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
         autoUpdate()
         let nib = UINib(nibName: "DemoTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "DemoTableViewCell")
@@ -55,7 +57,9 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     }
         
 
-    
+   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+            return cellSpacingHeight
+        }
 
     //Preparamos las celdas para añadirlas al table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,8 +69,10 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DemoTableViewCell", for: indexPath) as! DemoTableViewCell
         cell.objName.text = tabla[indexPath.row].nameObj
-        cell.objTags.text = tabla[indexPath.row].tagsObj
+        cell.objTags.text = "Nintendo"
         cell.objPrice.text = tabla[indexPath.row].priceStr
+     
+        
         let url = URL(string: tabla[indexPath.row].imagenObj)
         // Crear URL
         var image: UIImage?
