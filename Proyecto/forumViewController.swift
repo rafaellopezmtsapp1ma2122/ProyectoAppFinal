@@ -1,26 +1,29 @@
+//
+//  forumViewController.swift
+//  Proyecto
+//
+//  Created by Apps2M on 3/2/23.
+//
+
 import UIKit
 
-class homeViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
+class forumViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
 
-    let cellSpacingHeight: CGFloat = 5
+ 
     
     @IBOutlet weak var tableView: UITableView!
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         autoUpdate()
-        let nib = UINib(nibName: "DemoTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "DemoTableViewCell")
-        super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.reloadData()
     }
     
-
-    
-    var tabla: [Item] = []
+    var tabla: [Forum] = []
     let url = URL(string: "https://superapi.netlify.app/api/db/eventos")!
     
     func autoUpdate(){
@@ -47,7 +50,7 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             //Recorremos la lista que acabamos de crear y añadimos al otro array de objetos que hemos creado especificamente para las listas
             for o in listaTemp as! [[String: Any]] {
                
-                tabla.append(Item(json: o))
+                tabla.append(Forum(json: o))
                 
             }
             } catch let errorJson {
@@ -57,9 +60,9 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     }
         
 
-   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+   /*func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
             return cellSpacingHeight
-        }
+        }*/
 
     //Preparamos las celdas para añadirlas al table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,13 +70,14 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DemoTableViewCell", for: indexPath) as! DemoTableViewCell
-        cell.objName.text = tabla[indexPath.row].nameObj
-        cell.objTags.text = "Nintendo"
-        cell.objPrice.text = tabla[indexPath.row].priceStr + " €"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "celdaID", for: indexPath) as! forumTableViewCell
+                                                
+        cell.ForumName.text = tabla[indexPath.row].nameUser
+        cell.ForumNumber.text = "Nintendo"
+        
      
         
-        let url = URL(string: tabla[indexPath.row].imagenObj)
+        let url = URL(string: tabla[indexPath.row].imagen)
         // Crear URL
         var image: UIImage?
      
@@ -89,4 +93,8 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         return cell
     }
     
+
+
+
 }
+
