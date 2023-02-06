@@ -13,9 +13,13 @@
 		0D37699C2987B72300C02544 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D37699A2987B72300C02544 /* Main.storyboard */; };
 		0D37699E2987B72400C02544 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D37699D2987B72400C02544 /* Assets.xcassets */; };
 		0D3769A12987B72400C02544 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D37699F2987B72400C02544 /* LaunchScreen.storyboard */; };
+		0D3931512990EF69006936D1 /* forumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D39314F2990EF69006936D1 /* forumTableViewCell.swift */; };
+		0D3931522990EF69006936D1 /* forumTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D3931502990EF69006936D1 /* forumTableViewCell.xib */; };
+		0D3931582990F227006936D1 /* ForumCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3931572990F227006936D1 /* ForumCard.swift */; };
+		0D39315A29910E45006936D1 /* Aero.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0D39315929910E45006936D1 /* Aero.ttf */; };
+		0D39315F299115E1006936D1 /* modViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D39315E299115E1006936D1 /* modViewController.swift */; };
 		0D4BE833298D359000741EF0 /* forumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4BE832298D359000741EF0 /* forumViewController.swift */; };
 		0D4BE835298D394800741EF0 /* Forum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4BE834298D394800741EF0 /* Forum.swift */; };
-		0D4BE83B298D3F7400741EF0 /* forumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4BE83A298D3F7400741EF0 /* forumTableViewCell.swift */; };
 		0DA8283E298BAF730015707F /* DemoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8283D298BAF730015707F /* DemoTableViewCell.swift */; };
 		0DA82840298BAF850015707F /* DemoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DA8283F298BAF850015707F /* DemoTableViewCell.xib */; };
 		0DD6273D298A5A8D0038BCE2 /* item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD6273C298A5A8D0038BCE2 /* item.swift */; };
@@ -33,9 +37,13 @@
 		0D37699D2987B72400C02544 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D3769A02987B72400C02544 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D3769A22987B72400C02544 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D39314F2990EF69006936D1 /* forumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = forumTableViewCell.swift; path = ../forumTableViewCell.swift; sourceTree = "<group>"; };
+		0D3931502990EF69006936D1 /* forumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = forumTableViewCell.xib; sourceTree = "<group>"; };
+		0D3931572990F227006936D1 /* ForumCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumCard.swift; sourceTree = "<group>"; };
+		0D39315929910E45006936D1 /* Aero.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aero.ttf; sourceTree = "<group>"; };
+		0D39315E299115E1006936D1 /* modViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modViewController.swift; sourceTree = "<group>"; };
 		0D4BE832298D359000741EF0 /* forumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forumViewController.swift; sourceTree = "<group>"; };
 		0D4BE834298D394800741EF0 /* Forum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forum.swift; sourceTree = "<group>"; };
-		0D4BE83A298D3F7400741EF0 /* forumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forumTableViewCell.swift; sourceTree = "<group>"; };
 		0DA8283D298BAF730015707F /* DemoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTableViewCell.swift; sourceTree = "<group>"; };
 		0DA8283F298BAF850015707F /* DemoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoTableViewCell.xib; sourceTree = "<group>"; };
 		0DD6273C298A5A8D0038BCE2 /* item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = item.swift; sourceTree = "<group>"; };
@@ -89,9 +97,21 @@
 				0DA8283F298BAF850015707F /* DemoTableViewCell.xib */,
 				0D4BE832298D359000741EF0 /* forumViewController.swift */,
 				0D4BE834298D394800741EF0 /* Forum.swift */,
-				0D4BE83A298D3F7400741EF0 /* forumTableViewCell.swift */,
+				0D39314F2990EF69006936D1 /* forumTableViewCell.swift */,
+				0D3931502990EF69006936D1 /* forumTableViewCell.xib */,
+				0D3931572990F227006936D1 /* ForumCard.swift */,
+				0D39315E299115E1006936D1 /* modViewController.swift */,
+				0D39315B29910E54006936D1 /* fonts */,
 			);
 			path = Proyecto;
+			sourceTree = "<group>";
+		};
+		0D39315B29910E54006936D1 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0D39315929910E45006936D1 /* Aero.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,7 +173,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D3769A12987B72400C02544 /* LaunchScreen.storyboard in Resources */,
+				0D3931522990EF69006936D1 /* forumTableViewCell.xib in Resources */,
 				0D37699E2987B72400C02544 /* Assets.xcassets in Resources */,
+				0D39315A29910E45006936D1 /* Aero.ttf in Resources */,
 				0DA82840298BAF850015707F /* DemoTableViewCell.xib in Resources */,
 				0D37699C2987B72300C02544 /* Main.storyboard in Resources */,
 			);
@@ -169,14 +191,16 @@
 				0D3769992987B72300C02544 /* ViewController.swift in Sources */,
 				0DD62741298A5DB30038BCE2 /* homeViewController.swift in Sources */,
 				0DA8283E298BAF730015707F /* DemoTableViewCell.swift in Sources */,
-				0D4BE83B298D3F7400741EF0 /* forumTableViewCell.swift in Sources */,
 				0D4BE833298D359000741EF0 /* forumViewController.swift in Sources */,
 				0D3769952987B72300C02544 /* AppDelegate.swift in Sources */,
+				0D3931582990F227006936D1 /* ForumCard.swift in Sources */,
 				0DD6273D298A5A8D0038BCE2 /* item.swift in Sources */,
 				0D3769972987B72300C02544 /* SceneDelegate.swift in Sources */,
 				0DD6274D298A7A8E0038BCE2 /* profileViewController.swift in Sources */,
 				0DD6274B298A6CD40038BCE2 /* registerViewController.swift in Sources */,
 				0D4BE835298D394800741EF0 /* Forum.swift in Sources */,
+				0D39315F299115E1006936D1 /* modViewController.swift in Sources */,
+				0D3931512990EF69006936D1 /* forumTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

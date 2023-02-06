@@ -18,12 +18,19 @@ class forumViewController: UIViewController,UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         autoUpdate()
+        let nib = UINib(nibName: "forumTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "forumTableViewCell")
+        super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.reloadData()
     }
     
-    var tabla: [Forum] = []
+    override func viewWillAppear(_ animated: Bool) {
+        autoUpdate()
+    }
+    
+    var tabla: [ForumCard] = []
     let url = URL(string: "https://superapi.netlify.app/api/db/eventos")!
     
     func autoUpdate(){
@@ -50,7 +57,7 @@ class forumViewController: UIViewController,UITableViewDataSource, UITableViewDe
             //Recorremos la lista que acabamos de crear y añadimos al otro array de objetos que hemos creado especificamente para las listas
             for o in listaTemp as! [[String: Any]] {
                
-                tabla.append(Forum(json: o))
+                tabla.append(ForumCard(json: o))
                 
             }
             } catch let errorJson {
@@ -60,9 +67,7 @@ class forumViewController: UIViewController,UITableViewDataSource, UITableViewDe
     }
         
 
-   /*func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-            return cellSpacingHeight
-        }*/
+
 
     //Preparamos las celdas para añadirlas al table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -70,16 +75,15 @@ class forumViewController: UIViewController,UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "celdaID", for: indexPath) as! forumTableViewCell
-                                                
-        cell.ForumName.text = tabla[indexPath.row].nameUser
-        cell.ForumNumber.text = "Nintendo"
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "forumTableViewCell", for: indexPath) as! forumTableViewCell
+        cell.name.text = tabla[indexPath.row].nameForum
+        cell.num.text = "1234"
+      
      
         
-        let url = URL(string: tabla[indexPath.row].imagen)
+        //let url = URL(string: //tabla[indexPath.row].imagen)
         // Crear URL
-        var image: UIImage?
+        //var image: UIImage?
      
           /*  do {
                 let data = try Data(contentsOf: url!) // Crear objeto con los datos de la imagen

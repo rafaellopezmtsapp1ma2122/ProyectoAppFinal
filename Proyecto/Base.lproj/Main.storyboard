@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rtk-ct-zyU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AwA-bW-07b">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -7,6 +7,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Aero.ttf">
+            <string>Aero</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ZO1-9i-E9X">
@@ -20,33 +25,33 @@
                                 <rect key="frame" x="77" y="114" width="260" height="34"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9bQ-wd-sJE">
-                                <rect key="frame" x="30" y="218" width="354" height="304"/>
+                                <rect key="frame" x="30" y="218" width="354" height="285"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eA-se-Zme">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="14.5"/>
+                                        <fontDescription key="fontDescription" name="Aero" family="Aero" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QTT-aw-T7r">
-                                        <rect key="frame" x="0.0" y="40.5" width="354" height="34"/>
+                                        <rect key="frame" x="0.0" y="34.5" width="354" height="34"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaI-MV-hfW">
-                                        <rect key="frame" x="0.0" y="94.5" width="354" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="88.5" width="354" height="14.5"/>
+                                        <fontDescription key="fontDescription" name="Aero" family="Aero" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gYh-Gj-BMd">
-                                        <rect key="frame" x="0.0" y="135" width="354" height="34"/>
+                                        <rect key="frame" x="0.0" y="123" width="354" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="sBZ-BK-Mpd">
-                                        <rect key="frame" x="0.0" y="189" width="354" height="31"/>
+                                        <rect key="frame" x="0.0" y="177" width="354" height="31"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fCw-i0-LFI">
                                                 <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
@@ -54,20 +59,20 @@
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember me" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cP9-m3-95n">
                                                 <rect key="frame" x="64" y="0.0" width="290" height="31"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Aero" family="Aero" pointSize="17"/>
                                                 <color key="textColor" red="0.94117653369999998" green="0.94117647410000005" blue="0.94117653369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="6Q4-5b-9lk">
-                                        <rect key="frame" x="0.0" y="240" width="354" height="64"/>
+                                        <rect key="frame" x="0.0" y="228" width="354" height="57"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8KZ-lc-wMk">
-                                                <rect key="frame" x="0.0" y="0.0" width="152" height="64"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="152" height="57"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Login" cornerStyle="capsule">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                                    <fontDescription key="titleFontDescription" name="Aero" family="Aero" pointSize="20"/>
                                                     <directionalEdgeInsets key="contentInsets" top="20" leading="0.0" bottom="20" trailing="0.0"/>
                                                     <color key="baseForegroundColor" red="0.88418585059999999" green="0.84364861250000001" blue="0.488779664" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="baseBackgroundColor" red="0.4266385734" green="0.45471143720000001" blue="0.47151720520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -77,10 +82,10 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdk-u8-Rtx">
-                                                <rect key="frame" x="202" y="0.0" width="152" height="64"/>
+                                                <rect key="frame" x="202" y="0.0" width="152" height="57"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Create Account">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Register">
+                                                    <fontDescription key="titleFontDescription" name="Aero" family="Aero" pointSize="20"/>
                                                     <directionalEdgeInsets key="contentInsets" top="20" leading="0.0" bottom="20" trailing="0.0"/>
                                                     <color key="baseForegroundColor" red="0.88418585059999999" green="0.84364861250000001" blue="0.488779664" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="baseBackgroundColor" red="0.4266385734" green="0.45471143720000001" blue="0.47151720520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -94,8 +99,8 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot your password ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJu-cz-9T7">
-                                <rect key="frame" x="118" y="639" width="178.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="103.5" y="620" width="207" height="14.5"/>
+                                <fontDescription key="fontDescription" name="Aero" family="Aero" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -131,24 +136,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8T1-ZU-2R4">
-                                <rect key="frame" x="11" y="57" width="109" height="51"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <rect key="frame" x="11" y="57" width="122" height="35"/>
+                                <fontDescription key="fontDescription" name="Aero" family="Aero" pointSize="42"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bvw-da-mgf">
-                                <rect key="frame" x="10" y="108" width="394" height="44"/>
-                                <color key="backgroundColor" red="0.22674661870000001" green="0.25084635620000001" blue="0.26346424219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" showsCancelButton="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bvw-da-mgf">
+                                <rect key="frame" x="10" y="92" width="394" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="50L-DL-4cN"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="394" id="FVg-lU-Bwi"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="zLJ-ie-E4g"/>
                                 </constraints>
-                                <color key="barTintColor" red="0.22674661870000001" green="0.25084635620000001" blue="0.26346424219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardAppearance="alert"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="155" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qng-l8-1T7">
-                                <rect key="frame" x="20" y="202" width="374" height="590"/>
+                                <rect key="frame" x="20" y="186" width="374" height="590"/>
                                 <color key="backgroundColor" red="0.22674661870000001" green="0.25084635620000001" blue="0.26346424219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="590" id="FEz-Ai-c1n"/>
@@ -156,8 +163,8 @@
                                 </constraints>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommended" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0r-p4-hed">
-                                <rect key="frame" x="11" y="155" width="210" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <rect key="frame" x="11" y="151" width="217" height="25"/>
+                                <fontDescription key="fontDescription" name="Aero" family="Aero" pointSize="29"/>
                                 <color key="textColor" red="0.94117653369999998" green="0.94117647410000005" blue="0.94117653369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -169,7 +176,7 @@
                             <constraint firstItem="qng-l8-1T7" firstAttribute="leading" secondItem="GUr-5E-oTW" secondAttribute="leading" constant="20" id="7Pg-vE-KLf"/>
                             <constraint firstItem="Bvw-da-mgf" firstAttribute="leading" secondItem="GUr-5E-oTW" secondAttribute="leading" constant="10" id="CBj-oT-nO6"/>
                             <constraint firstItem="Bvw-da-mgf" firstAttribute="leading" secondItem="GUr-5E-oTW" secondAttribute="leading" constant="10" id="KPd-Pc-4EK"/>
-                            <constraint firstItem="J0r-p4-hed" firstAttribute="top" secondItem="Bvw-da-mgf" secondAttribute="bottom" constant="3" id="T10-5Q-Ics"/>
+                            <constraint firstItem="J0r-p4-hed" firstAttribute="top" secondItem="Bvw-da-mgf" secondAttribute="bottom" constant="15" id="T10-5Q-Ics"/>
                             <constraint firstItem="Bvw-da-mgf" firstAttribute="top" secondItem="8T1-ZU-2R4" secondAttribute="bottom" id="Un1-vh-Qyy"/>
                             <constraint firstItem="GUr-5E-oTW" firstAttribute="trailing" secondItem="Bvw-da-mgf" secondAttribute="trailing" constant="10" id="WVp-mI-tQh"/>
                             <constraint firstItem="J0r-p4-hed" firstAttribute="leading" secondItem="GUr-5E-oTW" secondAttribute="leading" constant="11" id="adu-15-cyy"/>
@@ -186,6 +193,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mpc-K4-yU4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2015.9420289855075" y="65.625"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="H1D-3C-TjB">
+            <objects>
+                <viewController id="bRq-Yx-kgd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zKm-Rn-I2q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gC7-AU-nkb"/>
+                        <color key="backgroundColor" red="0.22674661870000001" green="0.25084635620000001" blue="0.26346424219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ttq-tp-iha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2991" y="65"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="egq-XG-ExK">
@@ -217,113 +239,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmP-hI-3TL">
-                                <rect key="frame" x="11" y="57" width="115" height="51"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <rect key="frame" x="11" y="57" width="137" height="35"/>
+                                <fontDescription key="fontDescription" name="Aero" family="Aero" pointSize="42"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent chats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6l-k1-AyE">
-                                <rect key="frame" x="11" y="128" width="164" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <rect key="frame" x="11" y="112" width="190.5" height="24.5"/>
+                                <fontDescription key="fontDescription" name="Aero" family="Aero" pointSize="29"/>
                                 <color key="textColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New chats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJE-E8-X3e">
-                                <rect key="frame" x="11" y="473" width="133" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <color key="textColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nfh-ll-1A2">
-                                <rect key="frame" x="20" y="523" width="374" height="265"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ykh-JO-nIc">
+                                <rect key="frame" x="20" y="144.5" width="374" height="640"/>
                                 <color key="backgroundColor" red="0.22674661870000001" green="0.25084635620000001" blue="0.26346424219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="265" id="7lG-mV-5Ef"/>
-                                    <constraint firstAttribute="width" constant="374" id="TO1-Df-kWw"/>
-                                </constraints>
-                            </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ykh-JO-nIc">
-                                <rect key="frame" x="20" y="171" width="374" height="280"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
                                     <constraint firstAttribute="width" constant="374" id="7bg-6K-DgF"/>
-                                    <constraint firstAttribute="height" constant="280" id="prk-zN-k3q"/>
+                                    <constraint firstAttribute="height" constant="640" id="ivI-w2-5jo"/>
                                 </constraints>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="celdaID" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="73" id="Zm3-nY-vkF" customClass="forumTableViewCell" customModule="Proyecto" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="374" height="73"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zm3-nY-vkF" id="e6h-cq-wjS">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="73"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMc-xP-lbS">
-                                                    <rect key="frame" x="132" y="7" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPr-zR-lNd">
-                                                    <rect key="frame" x="166" y="41" width="42" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Es-uP-MJP">
-                                                    <rect key="frame" x="132" y="36" width="30" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="Jsd-vg-CUH"/>
-                                                        <constraint firstAttribute="width" constant="30" id="ron-ZM-a5S"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LEW-a7-iaO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="124" height="73"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="124" id="iDK-6y-PeO"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="UMc-xP-lbS" firstAttribute="top" secondItem="e6h-cq-wjS" secondAttribute="topMargin" constant="-4" id="2lp-zX-YWR"/>
-                                                <constraint firstItem="4Es-uP-MJP" firstAttribute="centerY" secondItem="VPr-zR-lNd" secondAttribute="centerY" id="4Br-CL-wRx"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="VPr-zR-lNd" secondAttribute="bottom" constant="1" id="7ou-eU-uN8"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="4Es-uP-MJP" secondAttribute="bottom" constant="-4" id="8sa-nm-NgL"/>
-                                                <constraint firstItem="LEW-a7-iaO" firstAttribute="top" secondItem="e6h-cq-wjS" secondAttribute="top" id="Fnt-JM-hug"/>
-                                                <constraint firstItem="LEW-a7-iaO" firstAttribute="leading" secondItem="e6h-cq-wjS" secondAttribute="leading" id="Mqw-F2-K2t"/>
-                                                <constraint firstItem="4Es-uP-MJP" firstAttribute="leading" secondItem="LEW-a7-iaO" secondAttribute="trailing" constant="8" symbolic="YES" id="OGU-DF-ZWG"/>
-                                                <constraint firstItem="UMc-xP-lbS" firstAttribute="leading" secondItem="LEW-a7-iaO" secondAttribute="trailing" constant="8" symbolic="YES" id="ZRT-c9-GdZ"/>
-                                                <constraint firstItem="VPr-zR-lNd" firstAttribute="leading" secondItem="4Es-uP-MJP" secondAttribute="trailing" constant="4" id="boY-5w-iAW"/>
-                                                <constraint firstAttribute="bottom" secondItem="LEW-a7-iaO" secondAttribute="bottom" id="rul-82-Vqd"/>
-                                                <constraint firstItem="4Es-uP-MJP" firstAttribute="top" secondItem="UMc-xP-lbS" secondAttribute="bottom" constant="8" symbolic="YES" id="ytY-ki-tOf"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="ForumImage" destination="LEW-a7-iaO" id="2Ct-Y7-lji"/>
-                                            <outlet property="ForumName" destination="UMc-xP-lbS" id="FUk-kU-Djz"/>
-                                            <outlet property="ForumNumber" destination="VPr-zR-lNd" id="fOf-w3-g1s"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Y6Z-CM-Tsf"/>
                         <color key="backgroundColor" red="0.22674661870000001" green="0.25084635620000001" blue="0.26346424219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="fJE-E8-X3e" firstAttribute="top" secondItem="Ykh-JO-nIc" secondAttribute="bottom" constant="22" id="1FJ-1g-bwI"/>
                             <constraint firstItem="Ykh-JO-nIc" firstAttribute="top" secondItem="j6l-k1-AyE" secondAttribute="bottom" constant="8" symbolic="YES" id="EnC-oZ-TAU"/>
                             <constraint firstItem="hmP-hI-3TL" firstAttribute="top" secondItem="Y6Z-CM-Tsf" secondAttribute="top" constant="13" id="Gwc-Dl-6ao"/>
-                            <constraint firstItem="nfh-ll-1A2" firstAttribute="leading" secondItem="Y6Z-CM-Tsf" secondAttribute="leading" constant="20" id="TTC-xv-ZL5"/>
                             <constraint firstItem="Y6Z-CM-Tsf" firstAttribute="trailing" secondItem="Ykh-JO-nIc" secondAttribute="trailing" constant="20" id="U7J-F9-vn3"/>
                             <constraint firstItem="j6l-k1-AyE" firstAttribute="top" secondItem="hmP-hI-3TL" secondAttribute="bottom" constant="20" id="YQ1-pG-Crh"/>
                             <constraint firstItem="j6l-k1-AyE" firstAttribute="leading" secondItem="Y6Z-CM-Tsf" secondAttribute="leading" constant="11" id="g36-Aw-g8O"/>
-                            <constraint firstItem="fJE-E8-X3e" firstAttribute="leading" secondItem="Y6Z-CM-Tsf" secondAttribute="leading" constant="11" id="riM-M2-nem"/>
-                            <constraint firstItem="nfh-ll-1A2" firstAttribute="top" secondItem="fJE-E8-X3e" secondAttribute="bottom" constant="15" id="thw-xk-Mzo"/>
                             <constraint firstItem="hmP-hI-3TL" firstAttribute="leading" secondItem="Y6Z-CM-Tsf" secondAttribute="leading" constant="11" id="xXA-xM-BXV"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Vectorforum" id="nVp-8b-Grh"/>
                     <connections>
-                        <outlet property="tableView" destination="Ykh-JO-nIc" id="pQx-rT-KyI"/>
+                        <outlet property="tableView" destination="Ykh-JO-nIc" id="cZO-8F-7pc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUf-J0-wrV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -347,25 +296,25 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0E-VQ-egc">
-                                <rect key="frame" x="143" y="156" width="129" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <rect key="frame" x="143" y="156" width="153" height="24.5"/>
+                                <fontDescription key="fontDescription" name="Aero" family="Aero" pointSize="29"/>
                                 <color key="textColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My elements" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7S-c7-FuF">
-                                <rect key="frame" x="20" y="263" width="160" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <rect key="frame" x="20" y="263" width="188" height="24.5"/>
+                                <fontDescription key="fontDescription" name="Aero" family="Aero" pointSize="29"/>
                                 <color key="textColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVJ-zC-eXN">
-                                <rect key="frame" x="11" y="57" width="113" height="51"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <rect key="frame" x="11" y="57" width="150.5" height="35"/>
+                                <fontDescription key="fontDescription" name="Aero" family="Aero" pointSize="42"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XNH-v9-Sw5">
-                                <rect key="frame" x="20" y="306" width="374" height="200"/>
+                                <rect key="frame" x="20" y="295.5" width="374" height="200"/>
                                 <color key="backgroundColor" red="0.22674661870000001" green="0.25084635620000001" blue="0.26346424219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="3pq-S6-jrR"/>
@@ -373,13 +322,13 @@
                                 </constraints>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vW8-fH-U6V">
-                                <rect key="frame" x="20" y="546" width="113" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <rect key="frame" x="20" y="535.5" width="142" height="24.5"/>
+                                <fontDescription key="fontDescription" name="Aero" family="Aero" pointSize="29"/>
                                 <color key="textColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7gL-7u-LoL">
-                                <rect key="frame" x="20" y="589" width="374" height="200"/>
+                                <rect key="frame" x="20" y="568" width="374" height="200"/>
                                 <color key="backgroundColor" red="0.22674661870000001" green="0.25084635620000001" blue="0.26346424219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="EzK-sz-00f"/>
@@ -424,29 +373,29 @@
             </objects>
             <point key="canvasLocation" x="2015.9420289855075" y="807.58928571428567"/>
         </scene>
-        <!--Edit Profile View Controller-->
+        <!--Mod View Controller-->
         <scene sceneID="Q6l-8c-ojt">
             <objects>
-                <viewController id="AwA-bW-07b" customClass="editProfileViewController" customModule="Proyecto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AwA-bW-07b" customClass="modViewController" customModule="Proyecto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZSP-an-hHj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y53-UE-SfF">
-                                <rect key="frame" x="112" y="57" width="190" height="51"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <rect key="frame" x="88" y="57" width="238" height="35"/>
+                                <fontDescription key="fontDescription" name="Aero" family="Aero" pointSize="42"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f9a-RW-lE1">
-                                <rect key="frame" x="132" y="168" width="150" height="150"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f9a-RW-lE1">
+                                <rect key="frame" x="132" y="152" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="5aA-29-ug8"/>
                                     <constraint firstAttribute="width" constant="150" id="i4j-Ez-hlU"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HA9-Zq-qkE">
-                                <rect key="frame" x="20" y="518" width="374" height="34"/>
+                                <rect key="frame" x="20" y="502" width="374" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="3V5-G8-IZo"/>
                                     <constraint firstAttribute="height" constant="34" id="Lu1-wL-SHX"/>
@@ -455,28 +404,40 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TaX-xf-nc0">
-                                <rect key="frame" x="106.5" y="722" width="201" height="42"/>
+                                <rect key="frame" x="92" y="706" width="230" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="MEm-zb-tUS"/>
-                                    <constraint firstAttribute="width" constant="201" id="lrI-pX-aET"/>
+                                    <constraint firstAttribute="width" constant="230" id="lrI-pX-aET"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Comfirm changes">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="23"/>
+                                    <fontDescription key="titleFontDescription" name="Aero" family="Aero" pointSize="23"/>
                                     <color key="baseBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWH-cX-Piz">
-                                <rect key="frame" x="20" y="489" width="76" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="20" y="479.5" width="84.5" height="14.5"/>
+                                <fontDescription key="fontDescription" name="Aero" family="Aero" pointSize="17"/>
                                 <color key="textColor" red="0.94117653369999998" green="0.94117647410000005" blue="0.94117653369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nts-tP-7OH">
-                                <rect key="frame" x="148.5" y="372" width="117" height="31"/>
+                                <rect key="frame" x="110.5" y="356" width="193" height="34"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Change Image"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Change Image">
+                                            <attributes>
+                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="NSFont" size="24" name="Aero"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="changeImage:" destination="AwA-bW-07b" eventType="touchUpInside" id="AZe-Ne-7Jf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="W7q-Jk-LOd"/>
@@ -501,6 +462,8 @@
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="image" destination="f9a-RW-lE1" id="3Wd-Z2-5b1"/>
+                        <outlet property="userName" destination="HA9-Zq-qkE" id="6T9-OV-1t7"/>
                         <segue destination="AVq-Al-WuK" kind="presentation" modalPresentationStyle="fullScreen" id="ok8-lr-esP"/>
                     </connections>
                 </viewController>
@@ -520,52 +483,52 @@
                                 <rect key="frame" x="77" y="114" width="260" height="34"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="CWL-li-bCu">
-                                <rect key="frame" x="30" y="218" width="354" height="367.5"/>
+                                <rect key="frame" x="30" y="218" width="354" height="340"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69a-LD-vQb">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="14.5"/>
+                                        <fontDescription key="fontDescription" name="Aero" family="Aero" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rFm-q9-jHN">
-                                        <rect key="frame" x="0.0" y="40.5" width="354" height="34"/>
+                                        <rect key="frame" x="0.0" y="34.5" width="354" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBU-5q-e9w">
-                                        <rect key="frame" x="0.0" y="94.5" width="354" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="88.5" width="354" height="14.5"/>
+                                        <fontDescription key="fontDescription" name="Aero" family="Aero" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ATe-zU-KDd">
-                                        <rect key="frame" x="0.0" y="135" width="354" height="34"/>
+                                        <rect key="frame" x="0.0" y="123" width="354" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="new-password"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comfirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQO-Ov-Ykc">
-                                        <rect key="frame" x="0.0" y="189" width="354" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="177" width="354" height="14.5"/>
+                                        <fontDescription key="fontDescription" name="Aero" family="Aero" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fke-Qa-Z4g">
-                                        <rect key="frame" x="0.0" y="229.5" width="354" height="34"/>
+                                        <rect key="frame" x="0.0" y="211.5" width="354" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="new-password"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="NNG-0D-OtP">
-                                        <rect key="frame" x="0.0" y="283.5" width="354" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="265.5" width="354" height="0.0"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="OGV-2D-mSp">
-                                        <rect key="frame" x="0.0" y="303.5" width="354" height="64"/>
+                                        <rect key="frame" x="0.0" y="285.5" width="354" height="54.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ms0-Iu-vAD">
-                                                <rect key="frame" x="0.0" y="0.0" width="354" height="64"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="354" height="54.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Create Account">
-                                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                                    <fontDescription key="titleFontDescription" name="Aero" family="Aero" pointSize="17"/>
                                                     <directionalEdgeInsets key="contentInsets" top="20" leading="0.0" bottom="20" trailing="0.0"/>
                                                     <color key="baseForegroundColor" red="0.88418585059999999" green="0.84364861250000001" blue="0.488779664" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="baseBackgroundColor" red="0.4266385734" green="0.45471143720000001" blue="0.47151720520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -597,8 +560,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Axi-E0-Yiy"/>
-        <segue reference="r6L-L9-wyZ"/>
+        <segue reference="Tqr-6d-biX"/>
+        <segue reference="ok8-lr-esP"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Group 227profile" width="27" height="27"/>
@@ -606,9 +569,6 @@
         <image name="Vectorforum" width="27" height="27"/>
         <image name="Vectorhome" width="27" height="27"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

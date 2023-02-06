@@ -102,7 +102,7 @@
                 <outlet property="objPrice" destination="rSt-fL-CHr" id="b4U-bk-vHZ"/>
                 <outlet property="objTags" destination="b6B-4k-1JL" id="UVh-9j-g64"/>
             </connections>
-            <point key="canvasLocation" x="93.478260869565219" y="135.60267857142856"/>
+            <point key="canvasLocation" x="93.478260869565219" y="134.93303571428569"/>
         </tableViewCell>
     </objects>
     <resources>
