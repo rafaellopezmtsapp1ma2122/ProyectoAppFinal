@@ -19,7 +19,10 @@ class DemoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var objPrice: UILabel!
     
-    @IBOutlet weak var objBoton: UIButton!
+ 
+    @IBAction func more(_ sender: Any) {
+      
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

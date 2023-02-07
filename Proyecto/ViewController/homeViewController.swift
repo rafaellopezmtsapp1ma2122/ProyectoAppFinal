@@ -1,7 +1,7 @@
 import UIKit
 
 class homeViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
-
+    var selectedItem: Int?
     let cellSpacingHeight: CGFloat = 5
     
     @IBOutlet weak var tableView: UITableView!
@@ -21,6 +21,8 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
 
     
     var tabla: [Item] = []
+   
+    
     let url = URL(string: "https://superapi.netlify.app/api/db/eventos")!
     
     func autoUpdate(){
@@ -47,13 +49,17 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             //Recorremos la lista que acabamos de crear y añadimos al otro array de objetos que hemos creado especificamente para las listas
             for o in listaTemp as! [[String: Any]] {
                
+                
                 tabla.append(Item(json: o))
                 
+               
             }
             } catch let errorJson {
                 print(errorJson)
             }
+        
         self.tableView.reloadData()
+        
     }
         
 
@@ -64,13 +70,17 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     //Preparamos las celdas para añadirlas al table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tabla.count
+       
+        
     }
+   
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
         let cell = tableView.dequeueReusableCell(withIdentifier: "DemoTableViewCell", for: indexPath) as! DemoTableViewCell
         cell.objName.text = tabla[indexPath.row].nameObj
         cell.objTags.text = "Nintendo"
-        cell.objPrice.text = tabla[indexPath.row].priceStr + " €"
+        cell.objPrice.text = tabla[indexPath.row].priceStr 
      
         
         let url = URL(string: tabla[indexPath.row].imagenObj)
@@ -88,5 +98,16 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
            */
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedItem = indexPath.row
+        self.performSegue(withIdentifier: "item", sender:
+                            tabla[indexPath.row])
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let itemViewController = segue.destination as! itemViewController
+        let item = sender as! Item
+        itemViewController.item = item
+    }
+
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D0FADA2299252BC00BF9A26 /* ForumCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0FADA1299252BC00BF9A26 /* ForumCard.swift */; };
+		0D0FADA729925DD100BF9A26 /* itemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0FADA629925DD100BF9A26 /* itemViewController.swift */; };
 		0D3769952987B72300C02544 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3769942987B72300C02544 /* AppDelegate.swift */; };
 		0D3769972987B72300C02544 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3769962987B72300C02544 /* SceneDelegate.swift */; };
 		0D3769992987B72300C02544 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3769982987B72300C02544 /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		0D0FADA1299252BC00BF9A26 /* ForumCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForumCard.swift; sourceTree = "<group>"; };
+		0D0FADA629925DD100BF9A26 /* itemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = itemViewController.swift; sourceTree = "<group>"; };
 		0D3769912987B72300C02544 /* Proyecto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Proyecto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D3769942987B72300C02544 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D3769962987B72300C02544 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +40,7 @@
 		0D37699D2987B72400C02544 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D3769A02987B72400C02544 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D3769A22987B72400C02544 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0D39314F2990EF69006936D1 /* forumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = forumTableViewCell.swift; path = ../forumTableViewCell.swift; sourceTree = "<group>"; };
+		0D39314F2990EF69006936D1 /* forumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forumTableViewCell.swift; sourceTree = "<group>"; };
 		0D3931502990EF69006936D1 /* forumTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = forumTableViewCell.xib; sourceTree = "<group>"; };
 		0D39315929910E45006936D1 /* Aero.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aero.ttf; sourceTree = "<group>"; };
 		0D39315E299115E1006936D1 /* modViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D0FADA32992549900BF9A26 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				0D37699A2987B72300C02544 /* Main.storyboard */,
+				0D37699F2987B72400C02544 /* LaunchScreen.storyboard */,
+				0DA8283F298BAF850015707F /* DemoTableViewCell.xib */,
+				0D3931502990EF69006936D1 /* forumTableViewCell.xib */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		0D0FADA4299254C300BF9A26 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				0DD6273C298A5A8D0038BCE2 /* item.swift */,
+				0D4BE834298D394800741EF0 /* Forum.swift */,
+				0D0FADA1299252BC00BF9A26 /* ForumCard.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		0D0FADA5299254F300BF9A26 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0D3769982987B72300C02544 /* ViewController.swift */,
+				0DD62740298A5DB30038BCE2 /* homeViewController.swift */,
+				0DD6274A298A6CD40038BCE2 /* registerViewController.swift */,
+				0DD6274C298A7A8E0038BCE2 /* profileViewController.swift */,
+				0DA8283D298BAF730015707F /* DemoTableViewCell.swift */,
+				0D4BE832298D359000741EF0 /* forumViewController.swift */,
+				0D39314F2990EF69006936D1 /* forumTableViewCell.swift */,
+				0D39315E299115E1006936D1 /* modViewController.swift */,
+				0D0FADA629925DD100BF9A26 /* itemViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		0D3769882987B72300C02544 = {
 			isa = PBXGroup;
 			children = (
@@ -84,23 +123,11 @@
 			children = (
 				0D3769942987B72300C02544 /* AppDelegate.swift */,
 				0D3769962987B72300C02544 /* SceneDelegate.swift */,
-				0D3769982987B72300C02544 /* ViewController.swift */,
-				0D37699A2987B72300C02544 /* Main.storyboard */,
 				0D37699D2987B72400C02544 /* Assets.xcassets */,
-				0D37699F2987B72400C02544 /* LaunchScreen.storyboard */,
 				0D3769A22987B72400C02544 /* Info.plist */,
-				0DD6273C298A5A8D0038BCE2 /* item.swift */,
-				0DD62740298A5DB30038BCE2 /* homeViewController.swift */,
-				0DD6274A298A6CD40038BCE2 /* registerViewController.swift */,
-				0DD6274C298A7A8E0038BCE2 /* profileViewController.swift */,
-				0DA8283D298BAF730015707F /* DemoTableViewCell.swift */,
-				0DA8283F298BAF850015707F /* DemoTableViewCell.xib */,
-				0D4BE832298D359000741EF0 /* forumViewController.swift */,
-				0D4BE834298D394800741EF0 /* Forum.swift */,
-				0D39314F2990EF69006936D1 /* forumTableViewCell.swift */,
-				0D3931502990EF69006936D1 /* forumTableViewCell.xib */,
-				0D39315E299115E1006936D1 /* modViewController.swift */,
-				0D0FADA1299252BC00BF9A26 /* ForumCard.swift */,
+				0D0FADA5299254F300BF9A26 /* ViewController */,
+				0D0FADA4299254C300BF9A26 /* Objects */,
+				0D0FADA32992549900BF9A26 /* StoryBoard */,
 				0D39315B29910E54006936D1 /* fonts */,
 			);
 			path = Proyecto;
@@ -197,6 +224,7 @@
 				0DD6273D298A5A8D0038BCE2 /* item.swift in Sources */,
 				0D3769972987B72300C02544 /* SceneDelegate.swift in Sources */,
 				0DD6274D298A7A8E0038BCE2 /* profileViewController.swift in Sources */,
+				0D0FADA729925DD100BF9A26 /* itemViewController.swift in Sources */,
 				0DD6274B298A6CD40038BCE2 /* registerViewController.swift in Sources */,
 				0D4BE835298D394800741EF0 /* Forum.swift in Sources */,
 				0D39315F299115E1006936D1 /* modViewController.swift in Sources */,

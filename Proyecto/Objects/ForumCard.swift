@@ -20,7 +20,7 @@ class ForumCard: Codable{
     
     init(json: [String: Any]){
         //imagen = json["image"] as? String ?? ""
-        nameForum = json["nameForum"] as? String ?? ""
+        nameForum = json["name"] as? String ?? ""
         numero = json["numForum"] as? Int ?? 0
         num = String(numero)
        
