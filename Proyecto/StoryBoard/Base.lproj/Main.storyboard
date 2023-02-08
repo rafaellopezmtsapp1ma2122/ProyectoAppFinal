@@ -70,7 +70,7 @@
                                         <rect key="frame" x="0.0" y="228" width="354" height="57"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8KZ-lc-wMk">
-                                                <rect key="frame" x="0.0" y="0.0" width="84.5" height="57"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="152" height="57"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Login" cornerStyle="capsule">
                                                     <fontDescription key="titleFontDescription" name="Aero" family="Aero" pointSize="20"/>
@@ -83,7 +83,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdk-u8-Rtx">
-                                                <rect key="frame" x="134.5" y="0.0" width="85" height="57"/>
+                                                <rect key="frame" x="202" y="0.0" width="152" height="57"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Register">
                                                     <fontDescription key="titleFontDescription" name="Aero" family="Aero" pointSize="20"/>
@@ -94,16 +94,6 @@
                                                 <connections>
                                                     <segue destination="vWe-QC-qiV" kind="presentation" modalPresentationStyle="fullScreen" id="Axi-E0-Yiy"/>
                                                 </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbK-aY-3V1">
-                                                <rect key="frame" x="269.5" y="0.0" width="84.5" height="57"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Register">
-                                                    <fontDescription key="titleFontDescription" name="Aero" family="Aero" pointSize="20"/>
-                                                    <directionalEdgeInsets key="contentInsets" top="20" leading="0.0" bottom="20" trailing="0.0"/>
-                                                    <color key="baseForegroundColor" red="0.88418585059999999" green="0.84364861250000001" blue="0.488779664" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <color key="baseBackgroundColor" red="0.4266385734" green="0.45471143720000001" blue="0.47151720520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </buttonConfiguration>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -235,6 +225,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="">
                                     <imageReference key="image" image="arrowshape.turn.up.left.fill" catalog="system" symbolScale="large"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="rtk-ct-zyU" kind="presentation" modalPresentationStyle="fullScreen" id="Sdf-Ux-aRN"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="159" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5R0-AJ-rOt">
                                 <rect key="frame" x="20" y="112" width="374" height="684"/>
@@ -648,7 +641,7 @@
                                     <imageReference key="image" image="arrowshape.turn.up.left.fill" catalog="system" symbolScale="large"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="rtk-ct-zyU" kind="presentation" modalPresentationStyle="fullScreen" id="kip-jp-oo0"/>
+                                    <segue destination="rtk-ct-zyU" kind="presentation" modalPresentationStyle="fullScreen" id="sp8-sJ-6fJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZjF-xo-v9j">
@@ -793,7 +786,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="Axi-E0-Yiy"/>
         <segue reference="ok8-lr-esP"/>
-        <segue reference="kip-jp-oo0"/>
+        <segue reference="Sdf-Ux-aRN"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Group 227profile" width="27" height="27"/>
