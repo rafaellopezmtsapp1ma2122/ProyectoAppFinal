@@ -1,37 +1,25 @@
-//
-//  forumViewController.swift
-//  Proyecto
-//
-//  Created by Apps2M on 3/2/23.
-//
-
 import UIKit
 
-class forumViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
-
+class chatViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     var selectedItem: Int?
- 
+    @IBOutlet weak var nameChat: NSLayoutConstraint!
     
-    @IBOutlet weak var tableView: UITableView!
-    
-
+    @IBOutlet weak var chatView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         autoUpdate()
-        let nib = UINib(nibName: "forumTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "forumTableViewCell")
+        let nib = UINib(nibName: "chatViewCell", bundle: nil)
+        chatView.register(nib, forCellReuseIdentifier: "chatViewCell")
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        self.tableView.reloadData()
+        chatView.delegate = self
+        chatView.dataSource = self
+        self.chatView.reloadData()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        autoUpdate()
-    }
+    var tabla: [Forum] = []
+   
     
-    var tabla: [ForumCard] = []
     let url = URL(string: "https://superapi.netlify.app/api/db/eventos")!
     
     func autoUpdate(){
@@ -58,33 +46,39 @@ class forumViewController: UIViewController,UITableViewDataSource, UITableViewDe
             //Recorremos la lista que acabamos de crear y añadimos al otro array de objetos que hemos creado especificamente para las listas
             for o in listaTemp as! [[String: Any]] {
                
-                tabla.append(ForumCard(json: o))
                 
+                tabla.append(Forum(json: o))
+                
+               
             }
             } catch let errorJson {
                 print(errorJson)
             }
-        self.tableView.reloadData()
+        
+        self.chatView.reloadData()
+        
     }
         
-
-
-
     //Preparamos las celdas para añadirlas al table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tabla.count
+       
+        
     }
+   
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "forumTableViewCell", for: indexPath) as! forumTableViewCell
-        cell.name.text = tabla[indexPath.row].nameForum
-        cell.num.text = "1234"
-      
+       
+        let cell = tableView.dequeueReusableCell(withIdentifier: "chatViewCell", for: indexPath) as! chatViewCell
+        //cell.userName.text = tabla[indexPath.row].nameUser
+        //cell.mensage.text = tabla[indexPath.row].mensaje
+        cell.userName.text = "Jonh David"
+        cell.mensage.text = "ALBERTO ES UN OTAKO"
      
         
-        //let url = URL(string: //tabla[indexPath.row].imagen)
+        //let url = URL(string: tabla[indexPath.row].imagenObj)
         // Crear URL
-        //var image: UIImage?
+       //var image: UIImage?
      
           /*  do {
                 let data = try Data(contentsOf: url!) // Crear objeto con los datos de la imagen
@@ -97,13 +91,18 @@ class forumViewController: UIViewController,UITableViewDataSource, UITableViewDe
            */
         return cell
     }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedItem = indexPath.row
         self.performSegue(withIdentifier: "enterChat", sender:
                             tabla[indexPath.row])
     }
+    
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let itemViewController = segue.destination as! itemViewController
+        let item = sender as! Item
+        itemViewController.item = item
+    }*/
 
+    
 
 }
-
