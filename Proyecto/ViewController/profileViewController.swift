@@ -4,6 +4,11 @@ class profileViewController: UIViewController {
 
     var button = dropDownBtn()
     
+    @IBAction func create(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "create", sender:
+                            sender)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         button = dropDownBtn.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))

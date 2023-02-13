@@ -23,7 +23,7 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     var tabla: [Item] = []
    
     
-    let url = URL(string: "https://superapi.netlify.app/api/db/eventos")!
+    let url = URL(string: "http://127.0.0.1:5000/getItem")!
     
     func autoUpdate(){
         
@@ -79,35 +79,34 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
        
         let cell = tableView.dequeueReusableCell(withIdentifier: "DemoTableViewCell", for: indexPath) as! DemoTableViewCell
         cell.objName.text = tabla[indexPath.row].nameObj
-        cell.objTags.text = "Nintendo"
-        cell.objPrice.text = tabla[indexPath.row].priceStr 
-     
+        cell.objTags.text = tabla[indexPath.row].tagsObj
+        cell.objPrice.text = tabla[indexPath.row].priceObj
+        let strBase64 = tabla[indexPath.row].imagenObj
+        do {
+            let dataDecoded : Data = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters)!
+            let decodedimage:UIImage = UIImage(data: dataDecoded as Data)!
+            print(decodedimage)
+            cell.objImage.image = decodedimage
+        }
+        catch {
+            cell.objImage.backgroundColor = .black
+            print("Error jajaj xd")
+        }
         
-        let url = URL(string: tabla[indexPath.row].imagenObj)
-        // Crear URL
-        var image: UIImage?
-     
-          /*  do {
-                let data = try Data(contentsOf: url!) // Crear objeto con los datos de la imagen
-                image = UIImage(data: data) // Crear una image a partir de los datos
-                cell.objImage.image = image
-            } catch {
-                cell.objImage.backgroundColor = .black
-                print("Error al descargar imagen")
-            }
-           */
+       
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedItem = indexPath.row
         self.performSegue(withIdentifier: "item", sender:
                             tabla[indexPath.row])
+        
     }
-    
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let itemViewController = segue.destination as! itemViewController
+        let ItemViewController = segue.destination as! itemViewController
         let item = sender as! Item
-        itemViewController.item = item
+        ItemViewController.item = item
     }
 
 }

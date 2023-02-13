@@ -63,14 +63,24 @@ class itemViewController: UIViewController {
             }
     
     override func viewWillAppear(_ animated: Bool) {
-        //imageView.image = UIImage(named: concert!.image)
+        let strBase64 = item?.imagenObj ?? ""
+        do {
+            let dataDecoded : Data = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters)!
+            let decodedimage:UIImage = UIImage(data: dataDecoded as Data)!
+            print(decodedimage)
+            imageView.image = decodedimage
+        }
+        catch {
+            imageView.backgroundColor = .black
+            print("Error jajaj xd")
+        }
         
         nameLabel.text = item?.nameObj
         nameLabel.textColor = UIColor.white
         tagLabel.text = item?.tagsObj
         tagLabel.textColor = UIColor.white
         tectLabel.text = item?.text
-        priceLabel.text = item?.priceStr
+        priceLabel.text = item?.priceObj
         priceLabel.textColor = UIColor.white
     }
     

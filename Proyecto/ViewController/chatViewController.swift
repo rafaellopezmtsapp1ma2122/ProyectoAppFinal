@@ -75,20 +75,6 @@ class chatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         cell.userName.text = "Jonh David"
         cell.mensage.text = "ALBERTO ES UN OTAKO"
      
-        
-        //let url = URL(string: tabla[indexPath.row].imagenObj)
-        // Crear URL
-       //var image: UIImage?
-     
-          /*  do {
-                let data = try Data(contentsOf: url!) // Crear objeto con los datos de la imagen
-                image = UIImage(data: data) // Crear una image a partir de los datos
-                cell.objImage.image = image
-            } catch {
-                cell.objImage.backgroundColor = .black
-                print("Error al descargar imagen")
-            }
-           */
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
