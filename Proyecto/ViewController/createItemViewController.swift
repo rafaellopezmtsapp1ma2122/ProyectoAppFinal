@@ -65,7 +65,7 @@ class createItemViewController: UIViewController, UIImagePickerControllerDelegat
             print("\n\n\n")
             print(data, String(data: data, encoding: .utf8) ?? "*unknown encoding*")
             DispatchQueue.main.async {
-                self.navigationController?.popViewController(animated: true)
+                self.performSegue(withIdentifier: "home", sender: sender)
             }
             
         }.resume()

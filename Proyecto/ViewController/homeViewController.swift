@@ -4,20 +4,23 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     var selectedItem: Int?
     let cellSpacingHeight: CGFloat = 5
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    override func viewDidLoad() {
+    override func viewDidLoad(){
         super.viewDidLoad()
     
-        autoUpdate()
+      
         let nib = UINib(nibName: "DemoTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "DemoTableViewCell")
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.reloadData()
+        autoUpdate()
     }
     
+  
 
     
     var tabla: [Item] = []

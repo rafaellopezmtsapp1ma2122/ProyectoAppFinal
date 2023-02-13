@@ -131,7 +131,7 @@
         <!--Home View Controller-->
         <scene sceneID="1QG-LN-3uc">
             <objects>
-                <viewController id="nYZ-si-7AD" customClass="homeViewController" customModule="Proyecto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="create" id="nYZ-si-7AD" customClass="homeViewController" customModule="Proyecto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dCd-WS-P0S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -188,6 +188,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Vectorhome" id="kOH-jb-dgR"/>
                     <connections>
+                        <outlet property="searchBar" destination="Bvw-da-mgf" id="fPQ-Bn-Qmg"/>
                         <outlet property="tableView" destination="qng-l8-1T7" id="HmN-I5-dkj"/>
                         <segue destination="TpA-cY-Yem" kind="presentation" identifier="item" modalPresentationStyle="fullScreen" id="gCe-E8-Zbe"/>
                     </connections>
@@ -289,7 +290,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ecp-pi-kzF">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ecp-pi-kzF">
                                 <rect key="frame" x="82" y="96" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="UrW-zC-YqG"/>
@@ -348,11 +349,20 @@
                                     <action selector="changeImage:" destination="tW6-13-JGn" eventType="touchUpInside" id="KzX-fF-XzD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahf-vt-Foj">
+                                <rect key="frame" x="26" y="44" width="56" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <connections>
+                                    <segue destination="rtk-ct-zyU" kind="presentation" identifier="home" modalPresentationStyle="fullScreen" id="WL4-fL-baT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a0b-8t-Z8W"/>
                         <color key="backgroundColor" red="0.22674661870000001" green="0.25084635620000001" blue="0.26346424219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="d3v-P6-thJ" firstAttribute="top" secondItem="81m-V9-CEq" secondAttribute="bottom" constant="30" id="1a9-04-RSo"/>
+                            <constraint firstItem="Ahf-vt-Foj" firstAttribute="leading" secondItem="a0b-8t-Z8W" secondAttribute="leading" constant="26" id="75d-NU-J2e"/>
                             <constraint firstItem="a0b-8t-Z8W" firstAttribute="trailing" secondItem="bmb-LW-L4J" secondAttribute="trailing" constant="20" id="Bng-Y2-2Ki"/>
                             <constraint firstItem="9uz-e0-Qct" firstAttribute="centerX" secondItem="xYC-ME-gQE" secondAttribute="centerX" id="CkN-Fl-9u1"/>
                             <constraint firstItem="a0b-8t-Z8W" firstAttribute="trailing" secondItem="81m-V9-CEq" secondAttribute="trailing" constant="20" id="ElY-g4-BuG"/>
@@ -366,6 +376,7 @@
                             <constraint firstItem="a0b-8t-Z8W" firstAttribute="trailing" secondItem="ecp-pi-kzF" secondAttribute="trailing" constant="82" id="kvO-DM-eDg"/>
                             <constraint firstItem="9uz-e0-Qct" firstAttribute="top" secondItem="d3v-P6-thJ" secondAttribute="bottom" constant="47" id="mAv-dv-S4k"/>
                             <constraint firstItem="81m-V9-CEq" firstAttribute="top" secondItem="Mdh-OD-roD" secondAttribute="bottom" constant="38" id="qw6-aa-BtM"/>
+                            <constraint firstItem="Ahf-vt-Foj" firstAttribute="top" secondItem="a0b-8t-Z8W" secondAttribute="top" id="rmL-FZ-Dir"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ked-T6-gwI"/>
@@ -446,6 +457,7 @@
                     <connections>
                         <outlet property="tableView" destination="Ykh-JO-nIc" id="cZO-8F-7pc"/>
                         <segue destination="Lel-zx-TLS" kind="presentation" identifier="enterChat" modalPresentationStyle="fullScreen" id="U1H-Xe-9ab"/>
+                        <segue destination="tW6-13-JGn" kind="presentation" identifier="foro" modalPresentationStyle="fullScreen" id="SjO-0A-H2w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUf-J0-wrV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -896,9 +908,9 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Axi-E0-Yiy"/>
-        <segue reference="AMg-33-dRm"/>
-        <segue reference="ok8-lr-esP"/>
-        <segue reference="sp8-sJ-6fJ"/>
+        <segue reference="r6L-L9-wyZ"/>
+        <segue reference="WL4-fL-baT"/>
+        <segue reference="SjO-0A-H2w"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Group 227profile" width="27" height="27"/>
