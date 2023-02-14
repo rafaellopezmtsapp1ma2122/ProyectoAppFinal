@@ -2,8 +2,13 @@ import UIKit
 
 class chatViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
+    var chat: Forum?
+    
+  
     var selectedItem: Int?
     @IBOutlet weak var nameChat: NSLayoutConstraint!
+    
+    @IBOutlet weak var textoChat: UILabel!
     
     @IBOutlet weak var chatView: UITableView!
     
@@ -16,6 +21,7 @@ class chatViewController: UIViewController,UITableViewDataSource,UITableViewDele
         chatView.delegate = self
         chatView.dataSource = self
         self.chatView.reloadData()
+        
     }
     
     var tabla: [Forum] = []
@@ -84,12 +90,17 @@ class chatViewController: UIViewController,UITableViewDataSource,UITableViewDele
                             tabla[indexPath.row])
     }
     
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func viewWillAppear(_ animated: Bool) {
+       
+        textoChat.text = chat?.nameUser
+    }
+    
+   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let itemViewController = segue.destination as! itemViewController
         let item = sender as! Item
         itemViewController.item = item
     }*/
 
-    
+  
 
 }

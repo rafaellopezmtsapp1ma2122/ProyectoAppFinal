@@ -100,12 +100,12 @@ class forumViewController: UIViewController,UITableViewDataSource, UITableViewDe
                             tabla[indexPath.row])
     }
 
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if okCell == true{
-            let ItemViewController = segue.destination as! itemViewController
-            let item = sender as! Item
-            ItemViewController.item = item
+            let ChatViewController = segue.destination as! chatViewController
+            let chat = sender as! Forum
+            ChatViewController.chat = chat
         }
-    }*/
+    }
 }
 
