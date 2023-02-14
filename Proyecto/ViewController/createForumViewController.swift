@@ -1,18 +1,17 @@
 //
-//  createItemViewController.swift
+//  createForumViewController.swift
 //  Proyecto
 //
-//  Created by Apps2M on 13/2/23.
+//  Created by Apps2M on 14/2/23.
 //
 
 import UIKit
 
-class createItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+class createForumViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var tags: UITextField!
-    @IBOutlet weak var des: UITextField!
-    @IBOutlet weak var price: UITextField!
     
     let imagePicker = UIImagePickerController()
     
@@ -36,7 +35,7 @@ class createItemViewController: UIViewController, UIImagePickerControllerDelegat
 //        print("\n BASE64: ", strBase64)
         
         // Le damos los datos del Array.
-        let body: [String: Any] = ["name": name.text ?? "Empty", "des": des.text ?? "Empty", "img": strBase64, "price": price.text! + "€" ]
+        let body: [String: Any] = ["name": name.text ?? "Empty", "img": strBase64, "tag": tags.text! + "€" ]
         var request = URLRequest(url: url)
         
         // Pasamos a Json el Array.

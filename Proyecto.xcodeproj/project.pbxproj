@@ -21,6 +21,7 @@
 		0D39315F299115E1006936D1 /* modViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D39315E299115E1006936D1 /* modViewController.swift */; };
 		0D4BE833298D359000741EF0 /* forumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4BE832298D359000741EF0 /* forumViewController.swift */; };
 		0D4BE835298D394800741EF0 /* Forum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D4BE834298D394800741EF0 /* Forum.swift */; };
+		0D6B362A299B9A3100BC033B /* createForumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6B3629299B9A3100BC033B /* createForumViewController.swift */; };
 		0D906C9729939E250035389C /* chatViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D906C9529939E250035389C /* chatViewCell.swift */; };
 		0D906C9829939E250035389C /* chatViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D906C9629939E250035389C /* chatViewCell.xib */; };
 		0D906C9A2993A05C0035389C /* chatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D906C992993A05C0035389C /* chatViewController.swift */; };
@@ -50,6 +51,7 @@
 		0D39315E299115E1006936D1 /* modViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modViewController.swift; sourceTree = "<group>"; };
 		0D4BE832298D359000741EF0 /* forumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = forumViewController.swift; sourceTree = "<group>"; };
 		0D4BE834298D394800741EF0 /* Forum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forum.swift; sourceTree = "<group>"; };
+		0D6B3629299B9A3100BC033B /* createForumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createForumViewController.swift; sourceTree = "<group>"; };
 		0D906C9529939E250035389C /* chatViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatViewCell.swift; sourceTree = "<group>"; };
 		0D906C9629939E250035389C /* chatViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = chatViewCell.xib; sourceTree = "<group>"; };
 		0D906C992993A05C0035389C /* chatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				0DA8283D298BAF730015707F /* DemoTableViewCell.swift */,
 				0D4BE832298D359000741EF0 /* forumViewController.swift */,
 				0D39314F2990EF69006936D1 /* forumTableViewCell.swift */,
+				0D6B3629299B9A3100BC033B /* createForumViewController.swift */,
 				0D39315E299115E1006936D1 /* modViewController.swift */,
 				0D0FADA629925DD100BF9A26 /* itemViewController.swift */,
 				0D906C9529939E250035389C /* chatViewCell.swift */,
@@ -236,6 +239,7 @@
 				0D4BE833298D359000741EF0 /* forumViewController.swift in Sources */,
 				0DC4D906299A3110007A9CEE /* createItemViewController.swift in Sources */,
 				0D3769952987B72300C02544 /* AppDelegate.swift in Sources */,
+				0D6B362A299B9A3100BC033B /* createForumViewController.swift in Sources */,
 				0D906C9729939E250035389C /* chatViewCell.swift in Sources */,
 				0DD6273D298A5A8D0038BCE2 /* item.swift in Sources */,
 				0D3769972987B72300C02544 /* SceneDelegate.swift in Sources */,

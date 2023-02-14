@@ -2,15 +2,20 @@ import UIKit
 
 class homeViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     var selectedItem: Int?
+    var okCell = false
     let cellSpacingHeight: CGFloat = 5
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBAction func create(_ sender: UIButton) {
+        okCell = false
+        self.performSegue(withIdentifier: "create", sender:
+                            sender)
+    }
     
     override func viewDidLoad(){
         super.viewDidLoad()
     
-      
         let nib = UINib(nibName: "DemoTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "DemoTableViewCell")
         super.viewDidLoad()
@@ -27,6 +32,8 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
    
     
     let url = URL(string: "http://127.0.0.1:5000/getItem")!
+    
+    
     
     func autoUpdate(){
         
@@ -99,17 +106,21 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
        
         return cell
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         selectedItem = indexPath.row
+        okCell = true
         self.performSegue(withIdentifier: "item", sender:
                             tabla[indexPath.row])
         
     }
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let ItemViewController = segue.destination as! itemViewController
-        let item = sender as! Item
-        ItemViewController.item = item
+        if okCell == true{
+            let ItemViewController = segue.destination as! itemViewController
+            let item = sender as! Item
+            ItemViewController.item = item
+        }
+       
     }
 
 }

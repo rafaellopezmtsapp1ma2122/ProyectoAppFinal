@@ -1,20 +1,19 @@
-//
-//  forumViewController.swift
-//  Proyecto
-//
-//  Created by Apps2M on 3/2/23.
-//
-
 import UIKit
 
 class forumViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
 
     var selectedItem: Int?
- 
+    var okCell = false
     
     @IBOutlet weak var tableView: UITableView!
     
-
+   
+    @IBAction func createForum(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "createForum", sender:
+                            sender)
+        
+    }
+    
 
     
     
@@ -81,22 +80,17 @@ class forumViewController: UIViewController,UITableViewDataSource, UITableViewDe
         let cell = tableView.dequeueReusableCell(withIdentifier: "forumTableViewCell", for: indexPath) as! forumTableViewCell
         cell.name.text = tabla[indexPath.row].nameForum
         cell.num.text = "1234"
-      
-     
-        
-        //let url = URL(string: //tabla[indexPath.row].imagen)
-        // Crear URL
-        //var image: UIImage?
-     
-          /*  do {
-                let data = try Data(contentsOf: url!) // Crear objeto con los datos de la imagen
-                image = UIImage(data: data) // Crear una image a partir de los datos
-                cell.objImage.image = image
-            } catch {
-                cell.objImage.backgroundColor = .black
-                print("Error al descargar imagen")
-            }
-           */
+        /*let strBase64 = tabla[indexPath.row].imagen
+        do {
+            let dataDecoded : Data = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters)!
+            let decodedimage:UIImage = UIImage(data: dataDecoded as Data)!
+            print(decodedimage)
+            cell.imagenForm.image = decodedimage
+        }
+        catch {
+            cell.imagenForm.backgroundColor = .black
+            print("Error jajaj xd")
+        }*/
         return cell
     }
     
@@ -106,6 +100,12 @@ class forumViewController: UIViewController,UITableViewDataSource, UITableViewDe
                             tabla[indexPath.row])
     }
 
-
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if okCell == true{
+            let ItemViewController = segue.destination as! itemViewController
+            let item = sender as! Item
+            ItemViewController.item = item
+        }
+    }*/
 }
 

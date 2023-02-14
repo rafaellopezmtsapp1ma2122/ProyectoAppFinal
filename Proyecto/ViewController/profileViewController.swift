@@ -4,10 +4,7 @@ class profileViewController: UIViewController {
 
     var button = dropDownBtn()
     
-    @IBAction func create(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "create", sender:
-                            sender)
-    }
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()

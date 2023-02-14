@@ -12,17 +12,16 @@ class ForumCard: Codable{
     
  
     public let nameForum: String
-    public let numero: Int
-    public let num: String
-    //public let imagen: String
+    public let numero: String
+    public let imagen: String
    
     
     
     init(json: [String: Any]){
-        //imagen = json["image"] as? String ?? ""
+        imagen = json["image"] as? String ?? ""
         nameForum = json["name"] as? String ?? ""
-        numero = json["numForum"] as? Int ?? 0
-        num = String(numero)
+        numero = json["numForum"] as? String ?? ""
+        
        
     }
 }
