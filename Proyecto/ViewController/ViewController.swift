@@ -23,9 +23,13 @@ class ViewController: UIViewController {
        
    
     }
-    @IBAction func switchRemember(_ sender: Any) {
+    @IBAction func switchRemember(_ sender: UISwitch) {
+        if sender.isOn == true {
+            print("recorfar activado ")
+        }else{
+            print("recordatoria desactivado")
+        }
     }
-    
     @IBAction func logOn(_ sender: Any) {
         //Comprobamos que no esten vacios los textfield e iniciamos la acción del metodo post para enviar los datos de usuario
         
