@@ -7,7 +7,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    var token: String?
+    static var token: String?
     
     @IBOutlet weak var myUser: UITextField!
     
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
                 //Recibimos la respuesta del servido si existe o no el usuario enviado y devuelve correcto o incorrecto y ya mandamos a la página correspondiente.
                 
                 print(data, String(data: data, encoding: .utf8) ?? "*unknown encoding*")
-                self.token = String(data: data, encoding: .utf8)
+                ViewController.token = String(data: data, encoding: .utf8)
                 if String(data: data, encoding: .utf8) == "Login succesful"{
                     DispatchQueue.main.sync {
                         self.performSegue(withIdentifier: "goHome", sender: sender)

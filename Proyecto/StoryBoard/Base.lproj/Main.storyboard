@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ry8-uE-vae">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rtk-ct-zyU">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -1048,6 +1048,7 @@
                         <outlet property="email" destination="rFm-q9-jHN" id="tGY-RI-XFm"/>
                         <outlet property="newPass" destination="ATe-zU-KDd" id="VeD-YV-yiO"/>
                         <outlet property="newUsername" destination="tvD-CN-AHf" id="Xfr-o5-F1I"/>
+                        <segue destination="rtk-ct-zyU" kind="presentation" identifier="goHome2" modalPresentationStyle="fullScreen" id="Dvs-hD-EK5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibu-MV-GNP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1056,6 +1057,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Dvs-hD-EK5"/>
         <segue reference="SjO-0A-H2w"/>
     </inferredMetricsTieBreakers>
     <resources>

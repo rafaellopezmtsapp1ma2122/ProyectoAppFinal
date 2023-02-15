@@ -20,7 +20,7 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     override func viewDidLoad(){
         super.viewDidLoad()
         
-        
+        self.token = ViewController.token ?? ""
         let nib = UINib(nibName: "DemoTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "DemoTableViewCell")
         super.viewDidLoad()
