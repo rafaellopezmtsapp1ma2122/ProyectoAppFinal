@@ -20,7 +20,7 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     override func viewDidLoad(){
         super.viewDidLoad()
         
-        ViewController.
+        
         let nib = UINib(nibName: "DemoTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "DemoTableViewCell")
         super.viewDidLoad()
