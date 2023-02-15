@@ -13,6 +13,8 @@ class createForumViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var tags: UITextField!
     
+
+    
     let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
@@ -20,6 +22,9 @@ class createForumViewController: UIViewController, UIImagePickerControllerDelega
         imagePicker.delegate = self
     }
     
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func confirm(_ sender: Any) {
         guard let url = URL(string:"http://127.0.0.1:5000/postItem")
         else {

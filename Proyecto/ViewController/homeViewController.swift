@@ -1,6 +1,8 @@
 import UIKit
 
 class homeViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
+    
+    var token = String()
     var selectedItem: Int?
     var okCell = false
     let cellSpacingHeight: CGFloat = 5
@@ -13,9 +15,12 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                             sender)
     }
     
+    
+    
     override func viewDidLoad(){
         super.viewDidLoad()
-    
+        
+        ViewController.
         let nib = UINib(nibName: "DemoTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "DemoTableViewCell")
         super.viewDidLoad()

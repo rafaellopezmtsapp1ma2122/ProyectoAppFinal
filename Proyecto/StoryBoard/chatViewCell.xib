@@ -28,7 +28,7 @@
                         <color key="textColor" systemColor="linkColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hola Amigos que tal aqui -13,Hola Amigos que tal aqui -13,Hola Amigos que tal aqui -13Hola Amigos que tal aqui -13" translatesAutoresizingMaskIntoConstraints="NO" id="qqM-U6-4yq">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Hola Amigos que tal aqui -13,Hola Amigos que tal aqui -13,Hola Amigos que tal aqui -13Hola Amigos que tal aqui -13" translatesAutoresizingMaskIntoConstraints="NO" id="qqM-U6-4yq">
                         <rect key="frame" x="16" y="29.5" width="288" height="95"/>
                         <color key="backgroundColor" red="0.94117653369999998" green="0.94117647410000005" blue="0.94117653369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>

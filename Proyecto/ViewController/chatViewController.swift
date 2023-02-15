@@ -12,6 +12,11 @@ class chatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     @IBOutlet weak var chatView: UITableView!
     
+   
+    @IBAction func backChat(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         autoUpdate()
@@ -86,8 +91,7 @@ class chatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedItem = indexPath.row
-        self.performSegue(withIdentifier: "enterChat", sender:
-                            tabla[indexPath.row])
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

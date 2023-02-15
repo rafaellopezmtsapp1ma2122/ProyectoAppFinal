@@ -14,6 +14,10 @@ class createItemViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var des: UITextField!
     @IBOutlet weak var price: UITextField!
     
+    @IBAction func backCreateItem(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {

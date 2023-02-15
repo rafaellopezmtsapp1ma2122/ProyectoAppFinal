@@ -21,6 +21,9 @@ class itemViewController: UIViewController {
     }
     @IBAction func edit(_ sender: Any) {
     }
+    @IBAction func backItem(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func checkMarkTapped(_ sender: UIButton) {
         
                

@@ -23,6 +23,9 @@ class modViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     let imagePicker = UIImagePickerController()
 
+    @IBAction func backEdit(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
 
     override func viewDidLoad() {
