@@ -23,15 +23,16 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         self.token = ViewController.token ?? ""
         let nib = UINib(nibName: "DemoTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "DemoTableViewCell")
-        super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.reloadData()
-        autoUpdate()
+        //updateElementsTableView()
     }
     
-  
-
+    override func viewDidAppear(_ animated: Bool) {
+        tabla=[]
+        updateElementsTableView()
+    }
     
     var tabla: [Item] = []
    
@@ -40,7 +41,7 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     
     
-    func autoUpdate(){
+    func updateElementsTableView(){
         
         do {
             //Cogemos los datos de la url

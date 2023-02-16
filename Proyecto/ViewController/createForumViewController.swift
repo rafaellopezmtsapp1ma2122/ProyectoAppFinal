@@ -68,7 +68,7 @@ class createForumViewController: UIViewController, UIImagePickerControllerDelega
             print("\n\n\n")
             print(data, String(data: data, encoding: .utf8) ?? "*unknown encoding*")
             DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "home", sender: sender)
+                self.dismiss(animated: true, completion: nil)
             }
             
         }.resume()

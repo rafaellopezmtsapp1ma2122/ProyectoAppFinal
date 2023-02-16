@@ -353,9 +353,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IUF-aK-Gei">
-                                <rect key="frame" x="26" y="44" width="56" height="31"/>
+                                <rect key="frame" x="26" y="44" width="46.5" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.backward.fill" catalog="system">
+                                    <color key="baseForegroundColor" red="0.99999994039999995" green="0.99999994039999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="back:" destination="oQT-3X-tEu" eventType="touchUpInside" id="X4h-Pe-CB6"/>
                                 </connections>
@@ -454,9 +456,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahf-vt-Foj">
-                                <rect key="frame" x="26" y="44" width="56" height="31"/>
+                                <rect key="frame" x="26" y="44" width="46.5" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.left.fill" catalog="system">
+                                    <color key="baseForegroundColor" red="0.99999994039999995" green="0.99999994039999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="backCreateItem:" destination="tW6-13-JGn" eventType="touchUpInside" id="FQP-9r-77p"/>
                                     <action selector="backCreateItem:" destination="ovl-va-BMi" eventType="touchUpInside" id="pCj-jB-sge"/>
@@ -646,10 +650,10 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLH-gO-ukl">
-                                <rect key="frame" x="334" y="59" width="60" height="31"/>
+                                <rect key="frame" x="347" y="59" width="47" height="31"/>
                                 <color key="tintColor" red="0.99999994039999995" green="0.99999994039999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Menu"/>
+                                <buttonConfiguration key="configuration" style="plain" image="line.3.horizontal" catalog="system"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gN9-IH-cgh"/>
@@ -681,6 +685,10 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="Menu" destination="KLH-gO-ukl" id="H52-FF-ZuV"/>
+                        <outlet property="imageUser" destination="cUG-YN-IGp" id="BLa-2m-k9L"/>
+                        <outlet property="myElementsTable" destination="XNH-v9-Sw5" id="I1L-bf-N0l"/>
+                        <outlet property="myFavoritesTable" destination="7gL-7u-LoL" id="klz-bk-DhF"/>
+                        <outlet property="nameUser" destination="L0E-VQ-egc" id="XSb-ve-x0E"/>
                         <segue destination="AwA-bW-07b" kind="presentation" identifier="editProfile" modalPresentationStyle="fullScreen" id="AMg-33-dRm"/>
                         <segue destination="Ry8-uE-vae" kind="presentation" identifier="logOut" modalPresentationStyle="fullScreen" id="8Fx-Hs-RyB"/>
                     </connections>
@@ -845,12 +853,8 @@
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="195€" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="od6-Wd-OK4">
-                                <rect key="frame" x="151" y="665" width="112" height="62"/>
+                                <rect key="frame" x="171.5" y="665" width="71.5" height="37"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="112" id="E0H-kz-Aok"/>
-                                    <constraint firstAttribute="height" constant="62" id="Y0W-FE-IoN"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <nil key="textColor"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -922,18 +926,18 @@
                             <constraint firstItem="A6x-Kg-Yvg" firstAttribute="bottom" secondItem="HLs-QM-rzq" secondAttribute="bottom" constant="46" id="578-Yi-T3H"/>
                             <constraint firstItem="A6x-Kg-Yvg" firstAttribute="trailing" secondItem="HLs-QM-rzq" secondAttribute="trailing" constant="20" id="EHE-dp-fxL"/>
                             <constraint firstItem="6Di-dD-fKv" firstAttribute="leading" secondItem="A6x-Kg-Yvg" secondAttribute="leading" constant="20" id="KBn-OR-hXL"/>
+                            <constraint firstItem="od6-Wd-OK4" firstAttribute="centerX" secondItem="o3d-Lf-2ru" secondAttribute="centerX" id="QPn-ed-GOo"/>
                             <constraint firstItem="A6x-Kg-Yvg" firstAttribute="trailing" secondItem="7Im-zI-YzO" secondAttribute="trailing" constant="87" id="S6U-Sf-Ufh"/>
                             <constraint firstItem="ho9-2c-q1u" firstAttribute="top" secondItem="7Im-zI-YzO" secondAttribute="bottom" constant="22" id="SKk-SH-vmD"/>
                             <constraint firstItem="A6x-Kg-Yvg" firstAttribute="trailing" secondItem="ZjF-xo-v9j" secondAttribute="trailing" constant="73" id="UH0-hY-mPn"/>
                             <constraint firstItem="c3e-OG-Uw1" firstAttribute="leading" secondItem="A6x-Kg-Yvg" secondAttribute="leading" constant="20" id="W21-uo-x9V"/>
                             <constraint firstItem="O33-GL-TQI" firstAttribute="leading" secondItem="A6x-Kg-Yvg" secondAttribute="leading" constant="20" id="cLH-NJ-92y"/>
                             <constraint firstItem="O33-GL-TQI" firstAttribute="top" secondItem="A6x-Kg-Yvg" secondAttribute="top" constant="10" id="eVt-i6-AO9"/>
-                            <constraint firstItem="od6-Wd-OK4" firstAttribute="leading" secondItem="A6x-Kg-Yvg" secondAttribute="leading" constant="151" id="gO7-K3-Pcc"/>
                             <constraint firstItem="9rd-1m-CvQ" firstAttribute="top" secondItem="ho9-2c-q1u" secondAttribute="bottom" constant="22" id="jDC-by-dbF"/>
                             <constraint firstItem="ho9-2c-q1u" firstAttribute="leading" secondItem="A6x-Kg-Yvg" secondAttribute="leading" constant="20" id="pwP-cD-XAK"/>
-                            <constraint firstItem="od6-Wd-OK4" firstAttribute="top" secondItem="6Di-dD-fKv" secondAttribute="bottom" constant="20" id="rgR-L2-vPa"/>
                             <constraint firstItem="A6x-Kg-Yvg" firstAttribute="bottom" secondItem="c3e-OG-Uw1" secondAttribute="bottom" constant="46" id="svf-80-E8p"/>
                             <constraint firstItem="9rd-1m-CvQ" firstAttribute="leading" secondItem="A6x-Kg-Yvg" secondAttribute="leading" constant="186" id="tQU-5w-OS8"/>
+                            <constraint firstItem="od6-Wd-OK4" firstAttribute="top" secondItem="6Di-dD-fKv" secondAttribute="bottom" constant="20" id="tj5-KZ-YAg"/>
                             <constraint firstItem="A6x-Kg-Yvg" firstAttribute="trailing" secondItem="6Di-dD-fKv" secondAttribute="trailing" constant="20" id="yGy-iS-d9j"/>
                             <constraint firstItem="ZjF-xo-v9j" firstAttribute="top" secondItem="A6x-Kg-Yvg" secondAttribute="top" constant="20" id="zmh-AQ-ux6"/>
                         </constraints>
@@ -950,6 +954,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="69O-GK-J2z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3960.8695652173915" y="789.50892857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="NAM-cI-koO">
+            <objects>
+                <viewController id="wX6-0g-bf3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YFi-9t-K3c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiJ-Jd-nUX">
+                                <rect key="frame" x="114" y="57" width="186.5" height="35"/>
+                                <fontDescription key="fontDescription" name="Aero" family="Aero" pointSize="42"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJr-ud-1BB">
+                                <rect key="frame" x="20" y="54" width="47" height="31"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="">
+                                    <imageReference key="image" image="arrowshape.turn.up.left.fill" catalog="system" symbolScale="large"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="backEdit:" destination="AwA-bW-07b" eventType="touchUpInside" id="B9t-wH-SJW"/>
+                                    <action selector="backItem:" destination="TpA-cY-Yem" eventType="touchUpInside" id="TcR-bg-9R1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Bc-h7-351"/>
+                        <color key="backgroundColor" red="0.22674661870000001" green="0.25084635620000001" blue="0.26346424219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wiJ-Jd-nUX" firstAttribute="top" secondItem="6Bc-h7-351" secondAttribute="top" constant="13" id="9lR-cP-P7S"/>
+                            <constraint firstItem="RJr-ud-1BB" firstAttribute="top" secondItem="6Bc-h7-351" secondAttribute="top" constant="10" id="Age-gQ-b6p"/>
+                            <constraint firstItem="RJr-ud-1BB" firstAttribute="leading" secondItem="6Bc-h7-351" secondAttribute="leading" constant="20" id="dK4-A1-cjh"/>
+                            <constraint firstItem="wiJ-Jd-nUX" firstAttribute="centerX" secondItem="YFi-9t-K3c" secondAttribute="centerX" id="pl4-Ok-5Ug"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gP0-CG-pl3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4807" y="790"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="IiD-uf-1wK">
@@ -1066,7 +1111,9 @@
         <image name="Group 257logo" width="43" height="51"/>
         <image name="Vectorforum" width="27" height="27"/>
         <image name="Vectorhome" width="27" height="27"/>
+        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
         <image name="arrowshape.turn.up.left.fill" catalog="system" width="128" height="106"/>
+        <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
         <image name="paperplane" catalog="system" width="128" height="118"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
         <image name="super-mario-64-cv-201542164822_1" width="438" height="370"/>
