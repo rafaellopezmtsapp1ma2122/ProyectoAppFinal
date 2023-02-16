@@ -23,6 +23,9 @@ class createItemViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
+        des.backgroundColor = UIColor.white
+        des.layer.masksToBounds = true
+        des.layer.cornerRadius = 10
     }
     
     @IBAction func confirm(_ sender: Any) {
