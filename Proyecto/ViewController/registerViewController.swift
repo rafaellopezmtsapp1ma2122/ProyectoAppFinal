@@ -79,7 +79,7 @@ class registerViewController: UIViewController {
                     print(data, String(data: data, encoding: .utf8) ?? "*unknown encoding*")
                     
                     DispatchQueue.main.async {
-                        self.performSegue(withIdentifier: "home", sender: sender)
+                        self.performSegue(withIdentifier: "goHome2", sender: sender)
                     }
                     
                 }.resume()

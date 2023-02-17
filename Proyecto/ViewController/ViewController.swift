@@ -9,38 +9,38 @@ class ViewController: UIViewController {
     
     static var token: String?
     
-    @IBOutlet weak var myUser: UITextField!
+    static var userName: String?
     
-  
-   
+    static var image: String?
+    
+    @IBOutlet weak var myEmail: UITextField!
+       
     @IBOutlet weak var myPaswd: UITextField!
     
     
     @IBAction func register(_ sender: UIButton) {
         
-       
             self.performSegue(withIdentifier: "register", sender: sender)
        
-   
     }
     @IBAction func switchRemember(_ sender: UISwitch) {
         if sender.isOn == true {
-            print("recorfar activado ")
+            print("recordar activado ")
         }else{
-            print("recordatoria desactivado")
+            print("recordar desactivado")
         }
     }
     @IBAction func logOn(_ sender: Any) {
         //Comprobamos que no esten vacios los textfield e iniciamos la acción del metodo post para enviar los datos de usuario
         
-        if myUser.text?.isEmpty == false && myPaswd.text?.isEmpty == false{
+        if myEmail.text?.isEmpty == false && myPaswd.text?.isEmpty == false{
             
             guard let url =  URL(string:"http://127.0.0.1:5000/login")
             else{
                 return
             }
             //Preparamos las variables a enviar
-            let body: [String: String] = ["nombre": myUser.text ?? "", "paswd": myPaswd.text ?? ""]
+            let body: [String: String] = ["email": myEmail.text ?? "", "passwd": myPaswd.text ?? ""]
            
             let finalBody = try? JSONSerialization.data(withJSONObject: body)
             var request = URLRequest(url: url)
@@ -65,7 +65,8 @@ class ViewController: UIViewController {
                 
                 print(data, String(data: data, encoding: .utf8) ?? "*unknown encoding*")
                 ViewController.token = String(data: data, encoding: .utf8)
-                if String(data: data, encoding: .utf8) == "Login succesful"{
+                if String(data: data, encoding: .utf8) == "ok"{
+    
                     DispatchQueue.main.sync {
                         self.performSegue(withIdentifier: "goHome", sender: sender)
                     }
@@ -76,7 +77,7 @@ class ViewController: UIViewController {
         }else{
             //Cambiamos el color de fondo de los textfield si estan vacios
             myPaswd.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 1.0)
-            myUser.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 1.0)
+            myEmail.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 1.0)
         }
        
     }

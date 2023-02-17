@@ -1,7 +1,35 @@
 import UIKit
 
 class profileViewController: UIViewController,UITableViewDataSource, UITableViewDelegate  {
+
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tabla.count
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DemoTableViewCell", for: indexPath) as! DemoTableViewCell
+        cell.objName.text = tabla[indexPath.row].nameObj
+        cell.objTags.text = tabla[indexPath.row].tagsObj
+        cell.objPrice.text = tabla[indexPath.row].priceObj
+        
+        let strBase64 = tabla[indexPath.row].imagenObj
+        do {
+            let dataDecoded : Data = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters)!
+            let decodedimage:UIImage = UIImage(data: dataDecoded as Data)!
+            print(decodedimage)
+            cell.objImage.image = decodedimage
+        }
+        catch {
+            cell.objImage.backgroundColor = .black
+            print("Error jajaj xd")
+        }
+        
+       
+        return cell
+    }
+
     var tabla: [Item] = []
     var tablaFav: [Item] = []
     
@@ -13,13 +41,11 @@ class profileViewController: UIViewController,UITableViewDataSource, UITableView
     
     @IBOutlet weak var myElementsTable: UITableView!
     
-    @IBOutlet weak var myFavoritesTable: UITableView!
-    
     @IBOutlet weak var Menu: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        nameUser.text = ViewController.userName
         Menu.showsMenuAsPrimaryAction = true
         Menu.menu = addMenuItems()
         
@@ -30,17 +56,12 @@ class profileViewController: UIViewController,UITableViewDataSource, UITableView
         myElementsTable.dataSource = self
         self.myElementsTable.reloadData()
         
-        myFavoritesTable.register(nib, forCellReuseIdentifier: "DemoTableViewCell")
-        super.viewDidLoad()
-        myFavoritesTable.delegate = self
-        myFavoritesTable.dataSource = self
-        self.myFavoritesTable.reloadData()
         
     }
 
 
-func addMenuItems() -> UIMenu{
-    let menuItems = UIMenu(title: "Options", options: .displayInline, children: [
+    func addMenuItems() -> UIMenu{
+        let menuItems = UIMenu(title: "Options", options: .displayInline, children: [
 
             UIAction(title: "Edit Profile", handler: { (_) in print("Edit")
 
@@ -65,8 +86,8 @@ func addMenuItems() -> UIMenu{
 
             return menuItems
 
-}
-
+    }
+   
     
     func favorites(){
         
@@ -80,36 +101,12 @@ func addMenuItems() -> UIMenu{
     
    
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tabla.count
-        
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DemoTableViewCell", for: indexPath) as! DemoTableViewCell
-        cell.objName.text = tabla[indexPath.row].nameObj
-        cell.objTags.text = tabla[indexPath.row].tagsObj
-        cell.objPrice.text = tabla[indexPath.row].priceObj
-        let strBase64 = tabla[indexPath.row].imagenObj
-        do {
-            let dataDecoded : Data = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters)!
-            let decodedimage:UIImage = UIImage(data: dataDecoded as Data)!
-            print(decodedimage)
-            cell.objImage.image = decodedimage
-        }
-        catch {
-            cell.objImage.backgroundColor = .black
-            print("Error jajaj xd")
-        }
-        
-       
-        return cell
-    }
+   
 
 
     
     
     
+
+
 }
-
-

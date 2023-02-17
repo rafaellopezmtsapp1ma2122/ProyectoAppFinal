@@ -71,5 +71,56 @@ class modViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         self.dismiss(animated: true, completion: nil)
 
     }
+    
+    
+    @IBAction func updateProfile(_ sender: UIButton) {
+        guard let url = URL(string:"http://127.0.0.1:5000/postItem")
+        else {
+            return
+        }
+        
+        // Try cacht
+       
+        let imageData:NSData = image.image!.pngData()! as NSData
+//        print("\n AAAAAAAA: ", imageData)
+       
+        let strBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
+//        print("\n BASE64: ", strBase64)
+        
+        // Le damos los datos del Array.
+        let body: [String: Any] = ["name": userName.text ?? "Empty",  "img": strBase64]
+        var request = URLRequest(url: url)
+        
+        // Pasamos a Json el Array.
+        
+        let finalBody = try? JSONSerialization.data(withJSONObject: body)
+        request.httpMethod = "POST"
+        request.httpBody = finalBody //
+        
+        // add headers for the request
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type") // change as per server requirements
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        URLSession.shared.dataTask(with: request){
+            (data, response, error) in
+            print(response as Any)
+            // Imprime el error en caso de que haya un fallo
+            if let error = error {
+                print(error)
+                return
+            }
+            guard let data = data else{
+                print("Error al recivir data.")
+                return
+            }
+            print("\n\n\n")
+            print(data, String(data: data, encoding: .utf8) ?? "*unknown encoding*")
+            DispatchQueue.main.async {
+                self.dismiss(animated: true, completion: nil)
+            }
+            
+        }.resume()
+    }
+    
 
 }
