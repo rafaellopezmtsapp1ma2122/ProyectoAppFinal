@@ -17,7 +17,4 @@ class Item {
         priceObj = json["price"] as? String ?? "0" + "€"
         
     }
-    
-    
-    
 }

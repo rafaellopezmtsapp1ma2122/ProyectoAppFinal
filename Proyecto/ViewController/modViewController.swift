@@ -1,23 +1,9 @@
-//
-//  modViewController.swift
-//  Proyecto
-//
-//  Created by Apps2M on 6/2/23.
-//
-
 import UIKit
-
-
 import Photos
-
-
 
 class modViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
- 
-    
     @IBOutlet weak var image: UIImageView!
-    
     
     @IBOutlet weak var userName: UITextField!
     
@@ -33,6 +19,10 @@ class modViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         super.viewDidLoad()
 
         imagePicker.delegate = self
+        
+        profileImg()
+        
+        userName.text = ViewController.userNameInpt
 
     }
 
@@ -64,7 +54,21 @@ class modViewController: UIViewController, UIImagePickerControllerDelegate, UINa
 
     }
 
-    
+    func profileImg(){
+        
+        let strBase64 = ViewController.imageUser ?? ""
+        do {
+            let dataDecoded : Data = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters)!
+            let decodedimage:UIImage = UIImage(data: dataDecoded as Data)!
+            print(decodedimage)
+            image.image = decodedimage
+        }
+        catch {
+            image.image = UIImage(named: "3.png")
+            print("Error jajaj xd")
+        }
+        
+    }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) { // Si se cancela, regresa de nuevo.
 

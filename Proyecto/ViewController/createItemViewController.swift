@@ -1,10 +1,3 @@
-//
-//  createItemViewController.swift
-//  Proyecto
-//
-//  Created by Apps2M on 13/2/23.
-//
-
 import UIKit
 
 class createItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {

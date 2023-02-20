@@ -43,14 +43,6 @@
                             <constraint firstAttribute="height" constant="141" id="af4-cu-hEG"/>
                         </constraints>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Nhv-3N-bdb">
-                        <rect key="frame" x="343" y="4.5" width="25" height="25"/>
-                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="25" id="eco-ph-Zbq"/>
-                            <constraint firstAttribute="width" constant="25" id="gsS-7o-Vfg"/>
-                        </constraints>
-                    </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uAE-5H-xT4">
                         <rect key="frame" x="-3" y="140" width="378" height="23"/>
                         <color key="backgroundColor" red="0.22674661870000001" green="0.25084635620000001" blue="0.26346424219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -72,16 +64,28 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXl-WJ-Exb">
+                        <rect key="frame" x="338" y="10" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="8a8-lF-BNv"/>
+                            <constraint firstAttribute="height" constant="25" id="Huq-Z5-zXg"/>
+                        </constraints>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="favorito"/>
+                        <connections>
+                            <action selector="favButtom:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="JA5-MQ-JzG"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" red="0.94117653369999998" green="0.94117647410000005" blue="0.94117653369999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="rSt-fL-CHr" firstAttribute="leading" secondItem="tc5-G3-dCX" secondAttribute="trailing" constant="8" symbolic="YES" id="1UV-Jh-q4O"/>
                     <constraint firstItem="sN7-8P-Nb3" firstAttribute="leading" secondItem="tc5-G3-dCX" secondAttribute="trailing" constant="8" symbolic="YES" id="3PZ-mU-5nI"/>
-                    <constraint firstItem="Nhv-3N-bdb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="4Oa-1U-Uy8"/>
+                    <constraint firstItem="dXl-WJ-Exb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="3ZD-ap-yxN"/>
                     <constraint firstAttribute="trailing" secondItem="uAE-5H-xT4" secondAttribute="trailing" constant="-2" id="9vo-hN-oTq"/>
                     <constraint firstItem="b6B-4k-1JL" firstAttribute="leading" secondItem="tc5-G3-dCX" secondAttribute="trailing" constant="8" symbolic="YES" id="ByJ-dp-XVV"/>
                     <constraint firstItem="tc5-G3-dCX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="DQs-tL-P1V"/>
-                    <constraint firstAttribute="trailing" secondItem="Nhv-3N-bdb" secondAttribute="trailing" constant="5" id="FUD-8i-ZkO"/>
                     <constraint firstItem="b6B-4k-1JL" firstAttribute="top" secondItem="rSt-fL-CHr" secondAttribute="bottom" constant="40" id="Krh-nl-5mk"/>
                     <constraint firstAttribute="trailing" secondItem="eOz-pG-E7z" secondAttribute="trailing" constant="5" id="Qak-yV-91a"/>
                     <constraint firstItem="uAE-5H-xT4" firstAttribute="top" secondItem="eOz-pG-E7z" secondAttribute="bottom" constant="7" id="W6L-tG-d1f"/>
@@ -89,13 +93,14 @@
                     <constraint firstItem="tc5-G3-dCX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Zxs-wf-SHb"/>
                     <constraint firstAttribute="bottom" secondItem="uAE-5H-xT4" secondAttribute="bottom" constant="-4" id="f0Q-xU-JRy"/>
                     <constraint firstItem="sN7-8P-Nb3" firstAttribute="leading" secondItem="tc5-G3-dCX" secondAttribute="trailing" constant="8" symbolic="YES" id="jUc-KB-tPQ"/>
-                    <constraint firstAttribute="trailing" secondItem="Nhv-3N-bdb" secondAttribute="trailing" constant="5" id="jkk-5a-o8W"/>
                     <constraint firstItem="sN7-8P-Nb3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="piu-um-WBS"/>
+                    <constraint firstAttribute="trailing" secondItem="dXl-WJ-Exb" secondAttribute="trailing" constant="10" id="wNc-f9-eeM"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="card" destination="H2p-sc-9uM" id="Qh8-qN-HrG"/>
+                <outlet property="favItem" destination="dXl-WJ-Exb" id="0NG-e1-fcA"/>
                 <outlet property="objImage" destination="tc5-G3-dCX" id="wnO-dg-abZ"/>
                 <outlet property="objName" destination="sN7-8P-Nb3" id="s0Q-68-Rhr"/>
                 <outlet property="objPrice" destination="rSt-fL-CHr" id="b4U-bk-vHZ"/>
@@ -105,7 +110,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="star" catalog="system" width="128" height="116"/>
+        <image name="favorito" width="32" height="32"/>
         <image name="super-mario-64-cv-201542164822_1" width="438" height="370"/>
     </resources>
 </document>

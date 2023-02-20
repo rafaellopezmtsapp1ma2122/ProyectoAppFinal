@@ -9,20 +9,19 @@ class ViewController: UIViewController {
     
     static var token: String?
     
-    static var userName: String?
+    static var userNameInpt: String?
     
-    static var image: String?
+    static var imageUser: String?
+    var tabla: [User] = []
     
     @IBOutlet weak var myEmail: UITextField!
        
     @IBOutlet weak var myPaswd: UITextField!
     
-    
     @IBAction func register(_ sender: UIButton) {
-        
-            self.performSegue(withIdentifier: "register", sender: sender)
-       
+        self.performSegue(withIdentifier: "register", sender: sender)
     }
+    
     @IBAction func switchRemember(_ sender: UISwitch) {
         if sender.isOn == true {
             print("recordar activado ")
@@ -30,6 +29,7 @@ class ViewController: UIViewController {
             print("recordar desactivado")
         }
     }
+    
     @IBAction func logOn(_ sender: Any) {
         //Comprobamos que no esten vacios los textfield e iniciamos la acción del metodo post para enviar los datos de usuario
         
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
             request.addValue("application/json", forHTTPHeaderField: "Accept")
             
             //Enviamos los datos
-            URLSession.shared.dataTask(with: request){
+            URLSession.shared.dataTask(with: request){ [self]
                 (data, response, error) in
                 print(response as Any)
                 if let error = error {
@@ -59,19 +59,30 @@ class ViewController: UIViewController {
                     return
                 }
                 guard let data = data else{
+                    
                     return
                 }
                 //Recibimos la respuesta del servido si existe o no el usuario enviado y devuelve correcto o incorrecto y ya mandamos a la página correspondiente.
                 
-                print(data, String(data: data, encoding: .utf8) ?? "*unknown encoding*")
-                ViewController.token = String(data: data, encoding: .utf8)
-                if String(data: data, encoding: .utf8) == "ok"{
-    
-                    DispatchQueue.main.sync {
-                        self.performSegue(withIdentifier: "goHome", sender: sender)
-                    }
+                //print(data, String(data: data, encoding: .utf8) ?? "*unknown encoding*")
+                
+                let jsonData = data
+                
+                let decoder = JSONDecoder()
+
+                do {
+                    let people = try decoder.decode([User].self, from: jsonData)
+                    ViewController.userNameInpt = people[people.count].userName
+                    ViewController.imageUser = people[people.count].imagenUser
+                    
+                } catch {
+                    print(error.localizedDescription)
                 }
-               
+                
+                DispatchQueue.main.sync {
+                    self.performSegue(withIdentifier: "goHome", sender: sender)
+                }
+                
             }.resume()
             
         }else{
@@ -79,14 +90,6 @@ class ViewController: UIViewController {
             myPaswd.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 1.0)
             myEmail.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 1.0)
         }
-       
     }
-    
-    
-    
-    
-   
-    
-
 }
 

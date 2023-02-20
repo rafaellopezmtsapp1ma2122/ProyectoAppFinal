@@ -4,17 +4,12 @@ class Forum: Codable{
     
     public let nameUser: String
     public let mensaje: String
-    //public let imagen: String
+    public let imagen: String
    
-    
-    
     init(json: [String: Any]){
-        //imagen = json["image"] as? String ?? ""
+        imagen = json["image"] as? String ?? ""
         nameUser = json["nameUser"] as? String ?? ""
         mensaje = json["mensaje"] as? String ?? ""
        
     }
-    
-    
-    
 }

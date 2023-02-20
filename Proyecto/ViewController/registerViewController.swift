@@ -9,6 +9,7 @@ class registerViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
     @IBOutlet weak var email: UITextField!
     
     @IBOutlet weak var newUsername: UITextField!
@@ -39,10 +40,8 @@ class registerViewController: UIViewController {
         
     }
     
-    
     @IBAction func createAccount(_ sender: Any) {
       
-            
             if confirmPass()=="ok" && notEmpty()==true{
                 guard let url = URL(string:"http://127.0.0.1:5000/postItem")
                 else {
@@ -83,17 +82,12 @@ class registerViewController: UIViewController {
                     }
                     
                 }.resume()
+                
             }else{
                 //Cambiamos el color de fondo de los textfield si estan vacios
                 rePass.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 1.0)
                 newPass.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 1.0)
+                
             }
-        
     }
-    
-
-
-    
-    
-    
 }

@@ -59,16 +59,12 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 if type(of: explica) != NSNull.self{
                    
                     listaTemp.append(explica)
-                    
                 }
             }
             //Recorremos la lista que acabamos de crear y añadimos al otro array de objetos que hemos creado especificamente para las listas
             for o in listaTemp as! [[String: Any]] {
                
-                
                 tabla.append(Item(json: o))
-                
-                
                
             }
             } catch let errorJson {
@@ -129,5 +125,4 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         }
        
     }
-
 }

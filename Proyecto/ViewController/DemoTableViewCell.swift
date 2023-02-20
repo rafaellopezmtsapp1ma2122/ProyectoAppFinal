@@ -1,13 +1,8 @@
-//
-//  DemoTableViewCell.swift
-//  Proyecto
-//
-//  Created by Apps2M on 1/2/23.
-//
-
 import UIKit
 
 class DemoTableViewCell: UITableViewCell {
+   
+    //Referenciamos los elementos del diseño en codigo para su posterior uso
     
     @IBOutlet weak var card: UIView!
     
@@ -19,26 +14,39 @@ class DemoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var objPrice: UILabel!
     
- 
-    @IBAction func more(_ sender: Any) {
-      
+    @IBOutlet weak var favItem: UIButton!
+    
+    @IBAction func favButtom(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear, animations: {
+
+            sender.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+
+             
+
+                }) { (success) in
+
+                    UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear, animations: {
+
+                        sender.isSelected = !sender.isSelected
+
+                        sender.transform = .identity
+
+                    }, completion: nil)
+
+                }
     }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        favItem.setImage(UIImage(named:"favorito"), for: .normal)
+        favItem.setImage(UIImage(named:"estrella"), for: .selected)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         objTags.layer.masksToBounds = true
         objTags.layer.cornerRadius = 10
-       
- 
-        
-        
-        // Configure the view for the selected state
     }
-    
-    
+
 }

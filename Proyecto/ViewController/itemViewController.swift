@@ -1,10 +1,3 @@
-//
-//  itemViewController.swift
-//  Proyecto
-//
-//  Created by Apps2M on 7/2/23.
-//
-
 import UIKit
 
 class itemViewController: UIViewController {
@@ -75,7 +68,7 @@ class itemViewController: UIViewController {
             imageView.image = decodedimage
         }
         catch {
-            imageView.backgroundColor = .black
+            imageView.image = UIImage(named: "person.crop.circle.fill.png")
             print("Error jajaj xd")
         }
         

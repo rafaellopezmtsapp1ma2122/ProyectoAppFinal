@@ -1,10 +1,3 @@
-//
-//  forumTableViewCell.swift
-//  Proyecto
-//
-//  Created by Apps2M on 6/2/23.
-//
-
 import UIKit
 
 class forumTableViewCell: UITableViewCell {
