@@ -8,7 +8,7 @@ class Forum: Codable{
    
     init(json: [String: Any]){
         imagen = json["image"] as? String ?? ""
-        nameUser = json["nameUser"] as? String ?? ""
+        nameUser = json["name"] as? String ?? ""
         mensaje = json["mensaje"] as? String ?? ""
        
     }

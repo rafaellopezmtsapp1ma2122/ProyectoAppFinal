@@ -11,8 +11,8 @@ class Item {
     
     init(json: [String: Any]){
         nameObj = json["name"] as? String ?? "None"
-        text = json["des"] as? String ?? "Without description"
-        imagenObj = json["img"] as? String ?? ""
+        text = json["description"] as? String ?? "Without description"
+        imagenObj = json["image"] as? String ?? ""
         tagsObj = json["tags"] as? String ?? "Empty"
         priceObj = json["price"] as? String ?? "0" + "€"
         

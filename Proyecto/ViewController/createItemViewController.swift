@@ -23,7 +23,7 @@ class createItemViewController: UIViewController, UIImagePickerControllerDelegat
     
     @IBAction func confirm(_ sender: Any) {
         
-        if name.text?.isEmpty == false && tags.text?.isEmpty == false && des.text?.isEmpty == false && price.text?.isEmpty == false{
+        if name.text?.isEmpty == false &&  des.text?.isEmpty == false && price.text?.isEmpty == false{
             
             guard let url = URL(string:"http://127.0.0.1:5000/postItem")
             else {
@@ -39,7 +39,7 @@ class createItemViewController: UIViewController, UIImagePickerControllerDelegat
     //        print("\n BASE64: ", strBase64)
             
             // Le damos los datos del Array.
-            let body: [String: Any] = ["name": name.text ?? "Empty", "des": des.text ?? "Empty", "img": strBase64, "price": price.text! + "€" ]
+            let body: [String: Any] = ["name": name.text ?? "Empty", "image": strBase64, "price": price.text! + "€", "description": des.text ?? "Empty" ]
             var request = URLRequest(url: url)
             
             // Pasamos a Json el Array.

@@ -40,16 +40,16 @@ class ViewController: UIViewController {
                 return
             }
             //Preparamos las variables a enviar
-            let body: [String: String] = ["email": myEmail.text ?? "", "passwd": myPaswd.text ?? ""]
+            let body: [String: String] = ["email": myEmail.text ?? "", "token": myPaswd.text ?? ""]
            
             let finalBody = try? JSONSerialization.data(withJSONObject: body)
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.httpBody = finalBody
             
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.addValue("application/json", forHTTPHeaderField: "Accept")
-            
+           request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+           request.addValue("application/json", forHTTPHeaderField: "Accept")
+           
             //Enviamos los datos
             URLSession.shared.dataTask(with: request){ [self]
                 (data, response, error) in
@@ -59,13 +59,15 @@ class ViewController: UIViewController {
                     return
                 }
                 guard let data = data else{
-                    
+                    print("Error Data")
                     return
                 }
+                print("\n\n\n")
+                print(data, String(data: data, encoding: .utf8) ?? "*unknown encoding*")
                 //Recibimos la respuesta del servido si existe o no el usuario enviado y devuelve correcto o incorrecto y ya mandamos a la página correspondiente.
                 
                 //print(data, String(data: data, encoding: .utf8) ?? "*unknown encoding*")
-                
+                /*
                 let jsonData = data
                 
                 let decoder = JSONDecoder()
@@ -78,7 +80,7 @@ class ViewController: UIViewController {
                 } catch {
                     print(error.localizedDescription)
                 }
-                
+                */
                 DispatchQueue.main.sync {
                     self.performSegue(withIdentifier: "goHome", sender: sender)
                 }

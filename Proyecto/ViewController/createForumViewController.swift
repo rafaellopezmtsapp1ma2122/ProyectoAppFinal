@@ -19,7 +19,7 @@ class createForumViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func confirm(_ sender: Any) {
-        guard let url = URL(string:"http://127.0.0.1:5000/postItem")
+        guard let url = URL(string:"http://127.0.0.1:5000/postForum")
         else {
             return
         }
