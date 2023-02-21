@@ -43,12 +43,12 @@ class registerViewController: UIViewController {
     @IBAction func createAccount(_ sender: Any) {
       
             if confirmPass()=="ok" && notEmpty()==true{
-                guard let url = URL(string:"http://127.0.0.1:5000/postItem")
+                guard let url = URL(string:"http://127.0.0.1:5000/register")
                 else {
                     return
                 }
                 
-                let body: [String: Any] = ["name": newUsername.text ?? "Empty", "paswd": newPass.text ?? "Empty", "email": email.text ?? "Empty" ]
+                let body: [String: Any] = ["name": newUsername.text ?? "Empty", "token": newPass.text ?? "Empty", "email": email.text ?? "Empty" ]
                 var request = URLRequest(url: url)
                 
                 // Pasamos a Json el Array.
