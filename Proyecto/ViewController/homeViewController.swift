@@ -93,7 +93,8 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let cell = tableView.dequeueReusableCell(withIdentifier: "DemoTableViewCell", for: indexPath) as! DemoTableViewCell
         cell.objName.text = tabla[indexPath.row].nameObj
         cell.objTags.text = tabla[indexPath.row].tagsObj
-        cell.objPrice.text = tabla[indexPath.row].priceObj
+        cell.objPrice.text = tabla[indexPath.row].stringPrice
+        
         let strBase64 = tabla[indexPath.row].imagenObj
         do {
             let dataDecoded : Data = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters)!

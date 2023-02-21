@@ -25,21 +25,25 @@ class createItemViewController: UIViewController, UIImagePickerControllerDelegat
         
         if name.text?.isEmpty == false &&  des.text?.isEmpty == false && price.text?.isEmpty == false{
             
+            
+            
             guard let url = URL(string:"http://127.0.0.1:5000/postItem")
             else {
                 return
             }
             
+            
+            
             // Try cacht
            
-            let imageData:NSData = image.image!.pngData()! as NSData
+            let imageData:NSData = image.image?.jpegData(compressionQuality: 0) as! NSData
     //        print("\n AAAAAAAA: ", imageData)
            
-            let strBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
+            let strBase64 = imageData.base64EncodedString()
     //        print("\n BASE64: ", strBase64)
             
             // Le damos los datos del Array.
-            let body: [String: Any] = ["name": name.text ?? "Empty", "image": strBase64, "price": price.text! + "€", "description": des.text ?? "Empty" ]
+            let body: [String: Any] = ["name": name.text ?? "Empty", "image": strBase64, "price": Int(price.text!)!, "description": des.text ?? "Empty" ]
             var request = URLRequest(url: url)
             
             // Pasamos a Json el Array.

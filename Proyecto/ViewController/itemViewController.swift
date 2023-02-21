@@ -77,7 +77,7 @@ class itemViewController: UIViewController {
         tagLabel.text = item?.tagsObj
         tagLabel.textColor = UIColor.white
         tectLabel.text = item?.text
-        priceLabel.text = item?.priceObj
+        priceLabel.text = item?.stringPrice
         priceLabel.textColor = UIColor.white
     }
     

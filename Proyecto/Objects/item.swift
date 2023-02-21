@@ -5,7 +5,8 @@ class Item {
     
     public let nameObj: String
     public let text: String
-    public let priceObj: String
+    public let priceObj: Int
+    public let stringPrice: String
     public let imagenObj: String
     public let tagsObj: String
     
@@ -14,7 +15,10 @@ class Item {
         text = json["description"] as? String ?? "Without description"
         imagenObj = json["image"] as? String ?? ""
         tagsObj = json["tags"] as? String ?? "Empty"
-        priceObj = json["price"] as? String ?? "0" + "€"
+        priceObj = json["price"] as? Int ?? 0
+        stringPrice = String(priceObj) + "€"
+        
+        
         
     }
 }

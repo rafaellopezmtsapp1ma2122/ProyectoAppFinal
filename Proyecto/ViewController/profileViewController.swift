@@ -28,9 +28,8 @@ class profileViewController: UIViewController,UITableViewDataSource, UITableView
         if ViewController.imageUser != nil{
             profileImg()
         }
-        
         //Colocamos el nombre de usuario
-        nameUser.text = ViewController.userNameInpt
+        nameUser.text = ViewController.user?.name
         //Preparamos el menú
         Menu.showsMenuAsPrimaryAction = true
         Menu.menu = addMenuItems()
@@ -109,7 +108,7 @@ class profileViewController: UIViewController,UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "DemoTableViewCell", for: indexPath) as! DemoTableViewCell
         cell.objName.text = tabla[indexPath.row].nameObj
         cell.objTags.text = tabla[indexPath.row].tagsObj
-        cell.objPrice.text = tabla[indexPath.row].priceObj
+        cell.objPrice.text = tabla[indexPath.row].stringPrice
         //Decodifocamos la imagen para su postorior uso en la celda
         let strBase64 = tabla[indexPath.row].imagenObj
         do {

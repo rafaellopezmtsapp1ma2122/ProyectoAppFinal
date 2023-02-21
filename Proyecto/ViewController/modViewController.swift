@@ -56,7 +56,7 @@ class modViewController: UIViewController, UIImagePickerControllerDelegate, UINa
 
     func profileImg(){
         
-        let strBase64 = ViewController.imageUser ?? ""
+        let strBase64 = ViewController.user!.image ?? ""
         do {
             let dataDecoded : Data = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters)!
             let decodedimage:UIImage = UIImage(data: dataDecoded as Data)!

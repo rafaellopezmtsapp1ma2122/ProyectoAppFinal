@@ -4,6 +4,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -11,12 +12,22 @@ class ViewController: UIViewController {
     
     static var userNameInpt: String?
     
+    var recibi: String?
+    
     static var imageUser: String?
-    var tabla: [User] = []
+    
+    static var user: User?
+    
+    //let jsonString = [String: Any]
+
+    
+    //let jsonData = Data(jsonString.utf8)
     
     @IBOutlet weak var myEmail: UITextField!
        
     @IBOutlet weak var myPaswd: UITextField!
+    
+    
     
     @IBAction func register(_ sender: UIButton) {
         self.performSegue(withIdentifier: "register", sender: sender)
@@ -32,7 +43,7 @@ class ViewController: UIViewController {
     
     @IBAction func logOn(_ sender: Any) {
         //Comprobamos que no esten vacios los textfield e iniciamos la acción del metodo post para enviar los datos de usuario
-        
+       
         if myEmail.text?.isEmpty == false && myPaswd.text?.isEmpty == false{
             
             guard let url =  URL(string:"http://127.0.0.1:5000/login")
@@ -63,28 +74,37 @@ class ViewController: UIViewController {
                     return
                 }
                 print("\n\n\n")
-                print(data, String(data: data, encoding: .utf8) ?? "*unknown encoding*")
-                //Recibimos la respuesta del servido si existe o no el usuario enviado y devuelve correcto o incorrecto y ya mandamos a la página correspondiente.
-                
-                //print(data, String(data: data, encoding: .utf8) ?? "*unknown encoding*")
-                /*
-                let jsonData = data
-                
-                let decoder = JSONDecoder()
-
+                print(String(data: data, encoding: .utf8)!)
+                print(data)
                 do {
-                    let people = try decoder.decode([User].self, from: jsonData)
-                    ViewController.userNameInpt = people[people.count].userName
-                    ViewController.imageUser = people[people.count].imagenUser
                     
-                } catch {
-                    print(error.localizedDescription)
+                    let decoder = JSONDecoder()
+
+                    ViewController.user = try decoder.decode(User.self, from: data)
+                    
+                    
+                } catch let error {
+                    
+                    print("Error: ", error)
+                    
                 }
-                */
-                DispatchQueue.main.sync {
-                    self.performSegue(withIdentifier: "goHome", sender: sender)
-                }
+                recibi = String(data: data, encoding: .utf8)
                 
+                
+                //Recibimos la respuesta del servido si existe o no el usuario enviado y devuelve correcto o incorrecto y ya mandamos a la página correspondiente.
+                print(String(data: data, encoding: .utf8)!)
+                print(recibi!)
+                if recibi! != "No se ha encontrado el usuario"{
+                    
+                    if recibi! != "La contraseña es incorrecta."{
+                        
+                        DispatchQueue.main.sync {
+                            self.performSegue(withIdentifier: "goHome", sender: sender)
+                        }
+                    }
+                }
+                    
+             
             }.resume()
             
         }else{

@@ -961,10 +961,10 @@
             </objects>
             <point key="canvasLocation" x="3960.8695652173915" y="789.50892857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="NAM-cI-koO">
             <objects>
-                <viewController id="wX6-0g-bf3" sceneMemberID="viewController">
+                <viewController id="wX6-0g-bf3" customClass="settingsViewController" customModule="Proyecto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YFi-9t-K3c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -987,20 +987,44 @@
                                     <action selector="backItem:" destination="TpA-cY-Yem" eventType="touchUpInside" id="TcR-bg-9R1"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQF-lh-Swa">
+                                <rect key="frame" x="60" y="292" width="294" height="25"/>
+                                <fontDescription key="fontDescription" name="Aero" family="Aero" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RTs-Bf-lgb">
+                                <rect key="frame" x="223" y="288" width="131" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="themeSaved:" destination="wX6-0g-bf3" eventType="valueChanged" id="7Ay-uu-no9"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Bc-h7-351"/>
                         <color key="backgroundColor" red="0.22674661870000001" green="0.25084635620000001" blue="0.26346424219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="YQF-lh-Swa" firstAttribute="leading" secondItem="6Bc-h7-351" secondAttribute="leading" constant="60" id="0Uu-4Y-jnF"/>
                             <constraint firstItem="wiJ-Jd-nUX" firstAttribute="top" secondItem="6Bc-h7-351" secondAttribute="top" constant="13" id="9lR-cP-P7S"/>
                             <constraint firstItem="RJr-ud-1BB" firstAttribute="top" secondItem="6Bc-h7-351" secondAttribute="top" constant="10" id="Age-gQ-b6p"/>
+                            <constraint firstItem="YQF-lh-Swa" firstAttribute="top" secondItem="wiJ-Jd-nUX" secondAttribute="bottom" constant="200" id="MKS-uz-ksG"/>
+                            <constraint firstItem="YQF-lh-Swa" firstAttribute="centerX" secondItem="YFi-9t-K3c" secondAttribute="centerX" id="cD4-ok-Ufm"/>
                             <constraint firstItem="RJr-ud-1BB" firstAttribute="leading" secondItem="6Bc-h7-351" secondAttribute="leading" constant="20" id="dK4-A1-cjh"/>
+                            <constraint firstItem="6Bc-h7-351" firstAttribute="trailing" secondItem="RTs-Bf-lgb" secondAttribute="trailing" constant="60" id="dNo-fJ-Yq2"/>
+                            <constraint firstItem="RTs-Bf-lgb" firstAttribute="top" secondItem="wiJ-Jd-nUX" secondAttribute="bottom" constant="196" id="n4T-UB-R1d"/>
                             <constraint firstItem="wiJ-Jd-nUX" firstAttribute="centerX" secondItem="YFi-9t-K3c" secondAttribute="centerX" id="pl4-Ok-5Ug"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="themes" destination="RTs-Bf-lgb" id="4V3-aw-Fbe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gP0-CG-pl3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6283" y="66"/>
+            <point key="canvasLocation" x="2016" y="1512"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="IiD-uf-1wK">
@@ -1095,12 +1119,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="comfirmPass" destination="fke-Qa-Z4g" id="lha-PD-xxC"/>
                         <outlet property="email" destination="rFm-q9-jHN" id="tGY-RI-XFm"/>
                         <outlet property="newPass" destination="ATe-zU-KDd" id="VeD-YV-yiO"/>
                         <outlet property="newUsername" destination="tvD-CN-AHf" id="Xfr-o5-F1I"/>
                         <outlet property="rePass" destination="fke-Qa-Z4g" id="aKk-75-7vA"/>
-                        <segue destination="Ry8-uE-vae" kind="presentation" modalPresentationStyle="fullScreen" id="vpk-90-4Wy"/>
+                        <segue destination="Ry8-uE-vae" kind="presentation" identifier="goHome2" modalPresentationStyle="fullScreen" id="vpk-90-4Wy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ibu-MV-GNP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1110,7 +1133,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ZMT-HX-ww2"/>
-        <segue reference="8Fx-Hs-RyB"/>
+        <segue reference="vpk-90-4Wy"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Group 227profile" width="27" height="27"/>

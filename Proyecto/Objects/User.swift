@@ -1,20 +1,21 @@
 import Foundation
 import UIKit
 
-class User: Codable{
+struct User: Codable{
     
-    public let userName: String
+    public let name: String
     public let email: String
-    public let token_pass: String
-    public let token_log: String
-    public let imagenUser: String
-    
+    public let token: String
+    public let session: String
+    public let image: String
+    /*
     init(json: [String: Any]){
-        userName = json["name"] as? String ?? ""
+        name = json["name"] as? String ?? ""
         email = json["email"] as? String ?? ""
-        token_pass = json["token"] as? String ?? ""
-        token_log = json["session"] as? String ?? ""
-        imagenUser = json["image"] as? String ?? ""
+        token = json["token"] as? String ?? ""
+        session = json["session"] as? String ?? ""
+        image = json["image"] as? String ?? ""
         
     }
+     */
 }
