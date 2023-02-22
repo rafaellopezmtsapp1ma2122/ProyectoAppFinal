@@ -9,6 +9,7 @@ class Item {
     public let stringPrice: String
     public let imagenObj: String
     public let tagsObj: String
+    public let fav: Int
     
     init(json: [String: Any]){
         nameObj = json["name"] as? String ?? "None"
@@ -17,6 +18,7 @@ class Item {
         tagsObj = json["tags"] as? String ?? "Empty"
         priceObj = json["price"] as? Int ?? 0
         stringPrice = String(priceObj) + "€"
+        fav = json["favorite"] as? Int ?? 0
         
         
         

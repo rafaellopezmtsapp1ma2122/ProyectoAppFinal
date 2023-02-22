@@ -4,6 +4,8 @@ class DemoTableViewCell: UITableViewCell {
    
     //Referenciamos los elementos del diseño en codigo para su posterior uso
     
+    static var name: String?
+    
     @IBOutlet weak var card: UIView!
     
     @IBOutlet weak var objImage: UIImageView!
@@ -34,11 +36,28 @@ class DemoTableViewCell: UITableViewCell {
                     }, completion: nil)
 
                 }
+        
+        
+        if sender.isSelected == true{
+            
+            DemoTableViewCell.name = String(objName.text!)
+            print(String(objName.text!))
+            //homeViewController.favoriteNo()
+            
+            
+        }else if sender.isSelected == false{
+            
+            DemoTableViewCell.name = String(objName.text!)
+            print(String(objName.text!))
+            //homeViewController.favoriteOk()
+            
+        }
     }
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        DemoTableViewCell.name = ""
         favItem.setImage(UIImage(named:"favorito"), for: .normal)
         favItem.setImage(UIImage(named:"estrella"), for: .selected)
     }

@@ -25,7 +25,7 @@ class profileViewController: UIViewController,UITableViewDataSource, UITableView
         super.viewDidLoad()
         //Cargamos la imagen de perfil
         
-        if ViewController.imageUser != nil{
+        if ViewController.user?.image != ""{
             profileImg()
         }
         //Colocamos el nombre de usuario
@@ -81,8 +81,8 @@ class profileViewController: UIViewController,UITableViewDataSource, UITableView
    
     //Función para la conversión de la imagen de Base64 a imagen y poderla implementarla en el lugar correspondiente
     func profileImg(){
-        
-        let strBase64 = ViewController.imageUser ?? ""
+       
+        let strBase64 = ViewController.imageUser!
         do {
             //Generamos las variable de las diferentes imagenes tanto codificadas como para codificar
             let dataDecoded : Data = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters)!
@@ -96,7 +96,7 @@ class profileViewController: UIViewController,UITableViewDataSource, UITableView
             imageUser.image = UIImage(named: "3.png")
             print("Error jajaj xd")
         }
-        
+       
     }
     //Funcion para el conteo de los elementos los cuales se van a añadir a ese table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

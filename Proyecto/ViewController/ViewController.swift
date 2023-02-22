@@ -81,6 +81,7 @@ class ViewController: UIViewController {
                     let decoder = JSONDecoder()
 
                     ViewController.user = try decoder.decode(User.self, from: data)
+                    ViewController.imageUser = ViewController.user?.image
                     
                     
                 } catch let error {

@@ -19,18 +19,19 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        
+        tabla.removeAll()
         self.token = ViewController.token ?? ""
         let nib = UINib(nibName: "DemoTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "DemoTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.reloadData()
-        //updateElementsTableView()
+        updateElementsTableView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        tabla=[]
+        tabla.removeAll()
+        tableView.reloadData()
         updateElementsTableView()
     }
     
@@ -38,8 +39,6 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
    
     
     let url = URL(string: "http://127.0.0.1:5000/getItem")!
-    
-    
     
     func updateElementsTableView(){
         
@@ -86,6 +85,8 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
        
         
     }
+    
+    
    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -94,6 +95,12 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         cell.objName.text = tabla[indexPath.row].nameObj
         cell.objTags.text = tabla[indexPath.row].tagsObj
         cell.objPrice.text = tabla[indexPath.row].stringPrice
+        if tabla[indexPath.row].fav == 0{
+            cell.favItem.setImage(UIImage(named:"favorito"), for: .normal)
+        }else{
+            cell.favItem.setImage(UIImage(named:"estrella"), for: .selected)
+        }
+        
         
         let strBase64 = tabla[indexPath.row].imagenObj
         do {
@@ -126,4 +133,87 @@ class homeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         }
        
     }
+    
+    
+    static func favoriteOk() {
+        
+        guard let urlFav = URL(string:"http://127.0.0.1:5000/postItem")
+        else {
+            return
+        }
+    
+        // Le damos los datos del Array.
+        let body: [String: Any] = ["name": DemoTableViewCell.name ?? "Empty", "favorite": 1 ]
+        var request = URLRequest(url: urlFav)
+        
+        // Pasamos a Json el Array.
+        
+        let finalBody = try? JSONSerialization.data(withJSONObject: body)
+        request.httpMethod = "POST"
+        request.httpBody = finalBody //
+        
+        // add headers for the request
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type") // change as per server requirements
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        URLSession.shared.dataTask(with: request){
+            (data, response, error) in
+            print(response as Any)
+            // Imprime el error en caso de que haya un fallo
+            if let error = error {
+                print(error)
+                return
+            }
+            guard let data = data else{
+                print("Error al recivir data.")
+                return
+            }
+            print("\n\n\n")
+            print(data, String(data: data, encoding: .utf8) ?? "*unknown encoding*")
+            
+            
+        }.resume()
+    }
+    
+    static func favoriteNo() {
+        
+        guard let urlUnFav = URL(string:"http://127.0.0.1:5000/postItem")
+        else {
+            return
+        }
+    
+        // Le damos los datos del Array.
+        let body: [String: Any] = ["name": DemoTableViewCell.name ?? "Empty", "favorite": 0 ]
+        var request = URLRequest(url: urlUnFav)
+        
+        // Pasamos a Json el Array.
+        
+        let finalBody = try? JSONSerialization.data(withJSONObject: body)
+        request.httpMethod = "POST"
+        request.httpBody = finalBody //
+        
+        // add headers for the request
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type") // change as per server requirements
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        URLSession.shared.dataTask(with: request){
+            (data, response, error) in
+            print(response as Any)
+            // Imprime el error en caso de que haya un fallo
+            if let error = error {
+                print(error)
+                return
+            }
+            guard let data = data else{
+                print("Error al recivir data.")
+                return
+            }
+            print("\n\n\n")
+            print(data, String(data: data, encoding: .utf8) ?? "*unknown encoding*")
+            
+            
+        }.resume()
+    }
+    
 }
+

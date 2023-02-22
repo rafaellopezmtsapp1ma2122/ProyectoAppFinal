@@ -29,11 +29,15 @@ class forumViewController: UIViewController,UITableViewDataSource, UITableViewDe
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        tabla.removeAll()
+        tableView.reloadData()
         autoUpdate()
+        
     }
     
+    
     var tabla: [ForumCard] = []
-    let url = URL(string: "https://superapi.netlify.app/api/db/eventos")!
+    let url = URL(string: "http://127.0.0.1:5000/getForum")!
     
     func autoUpdate(){
         
@@ -80,7 +84,7 @@ class forumViewController: UIViewController,UITableViewDataSource, UITableViewDe
         let cell = tableView.dequeueReusableCell(withIdentifier: "forumTableViewCell", for: indexPath) as! forumTableViewCell
         cell.name.text = tabla[indexPath.row].nameForum
         cell.num.text = "1234"
-        /*let strBase64 = tabla[indexPath.row].imagen
+        let strBase64 = tabla[indexPath.row].imagen
         do {
             let dataDecoded : Data = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters)!
             let decodedimage:UIImage = UIImage(data: dataDecoded as Data)!
@@ -90,7 +94,7 @@ class forumViewController: UIViewController,UITableViewDataSource, UITableViewDe
         catch {
             cell.imagenForm.backgroundColor = .black
             print("Error jajaj xd")
-        }*/
+        }
         return cell
     }
     

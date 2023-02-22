@@ -13,7 +13,9 @@ class modViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         self.dismiss(animated: true, completion: nil)
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        userName.text = ViewController.user?.name
+    }
     override func viewDidLoad() {
 
         super.viewDidLoad()
@@ -25,6 +27,8 @@ class modViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         userName.text = ViewController.userNameInpt
 
     }
+    
+ 
 
     
 
@@ -56,7 +60,7 @@ class modViewController: UIViewController, UIImagePickerControllerDelegate, UINa
 
     func profileImg(){
         
-        let strBase64 = ViewController.user!.image ?? ""
+        let strBase64 = ViewController.user!.image
         do {
             let dataDecoded : Data = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters)!
             let decodedimage:UIImage = UIImage(data: dataDecoded as Data)!
@@ -78,21 +82,21 @@ class modViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     
     @IBAction func updateProfile(_ sender: UIButton) {
-        guard let url = URL(string:"http://127.0.0.1:5000/postItem")
+        guard let url = URL(string:"http://127.0.0.1:5000/editUser")
         else {
             return
         }
         
         // Try cacht
        
-        let imageData:NSData = image.image!.pngData()! as NSData
+        let imageData:NSData = image.image?.jpegData(compressionQuality: 0) as! NSData
 //        print("\n AAAAAAAA: ", imageData)
        
         let strBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
 //        print("\n BASE64: ", strBase64)
         
         // Le damos los datos del Array.
-        let body: [String: Any] = ["name": userName.text ?? "Empty",  "img": strBase64]
+        let body: [String: Any] = ["name": userName.text ?? "Empty",  "image": strBase64, "email": ViewController.user?.email ?? ""]
         var request = URLRequest(url: url)
         
         // Pasamos a Json el Array.
@@ -119,6 +123,25 @@ class modViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             }
             print("\n\n\n")
             print(data, String(data: data, encoding: .utf8) ?? "*unknown encoding*")
+            
+            
+            do {
+                
+                let decoder = JSONDecoder()
+
+                ViewController.user = try decoder.decode(User.self, from: data)
+                ViewController.imageUser = ViewController.user?.image
+                
+                
+            } catch let error {
+                
+                print("Error: ", error)
+                
+            }
+            
+            
+            //Recibimos la respuesta del servido si existe o no el usuario enviado y devuelve correcto o incorrecto y ya mandamos a la página correspondiente.
+          
             DispatchQueue.main.async {
                 self.dismiss(animated: true, completion: nil)
             }

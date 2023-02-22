@@ -39,11 +39,12 @@ class createItemViewController: UIViewController, UIImagePickerControllerDelegat
             let imageData:NSData = image.image?.jpegData(compressionQuality: 0) as! NSData
     //        print("\n AAAAAAAA: ", imageData)
            
-            let strBase64 = imageData.base64EncodedString()
+            let strBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
     //        print("\n BASE64: ", strBase64)
             
             // Le damos los datos del Array.
-            let body: [String: Any] = ["name": name.text ?? "Empty", "image": strBase64, "price": Int(price.text!)!, "description": des.text ?? "Empty" ]
+          
+            let body: [String: Any] = ["name": name.text ?? "Empty", "image": strBase64, "price": Int(price.text!) ?? 0, "description": des.text ?? "Empty","user": ViewController.user?.email ?? "", "favorite": 0 ]
             var request = URLRequest(url: url)
             
             // Pasamos a Json el Array.

@@ -33,7 +33,7 @@ class createForumViewController: UIViewController, UIImagePickerControllerDelega
         //print("\n BASE64: ", strBase64)
         
         // Le damos los datos del Array.
-        let body: [String: Any] = ["name": name.text ?? "Empty", "img": strBase64, "tag": tags.text! + "€" ]
+        let body: [String: Any] = ["name": name.text ?? "Empty", "image": strBase64]
         var request = URLRequest(url: url)
         
         // Pasamos a Json el Array.
