@@ -185,6 +185,20 @@
                                     <action selector="create:" destination="nYZ-si-7AD" eventType="touchUpInside" id="uxF-ka-jTD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3y-UN-BzN">
+                                <rect key="frame" x="369" y="148" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="NHp-QK-mqq"/>
+                                    <constraint firstAttribute="width" constant="25" id="c61-MT-0Bj"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.2.circlepath" catalog="system"/>
+                                <connections>
+                                    <action selector="reload:" destination="dNx-gt-RWk" eventType="touchUpInside" id="BDy-TA-Rf4"/>
+                                    <action selector="reload:" destination="nYZ-si-7AD" eventType="touchUpInside" id="NuT-wb-e2f"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GUr-5E-oTW"/>
                         <color key="backgroundColor" red="0.22674661870000001" green="0.25084635620000001" blue="0.26346424219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -195,11 +209,13 @@
                             <constraint firstItem="Bvw-da-mgf" firstAttribute="leading" secondItem="GUr-5E-oTW" secondAttribute="leading" constant="10" id="CBj-oT-nO6"/>
                             <constraint firstItem="Bvw-da-mgf" firstAttribute="leading" secondItem="GUr-5E-oTW" secondAttribute="leading" constant="10" id="KPd-Pc-4EK"/>
                             <constraint firstItem="J0r-p4-hed" firstAttribute="top" secondItem="Bvw-da-mgf" secondAttribute="bottom" constant="15" id="T10-5Q-Ics"/>
+                            <constraint firstItem="qng-l8-1T7" firstAttribute="top" secondItem="Q3y-UN-BzN" secondAttribute="bottom" constant="13" id="T3w-AN-TJS"/>
                             <constraint firstItem="Bvw-da-mgf" firstAttribute="top" secondItem="8T1-ZU-2R4" secondAttribute="bottom" id="Un1-vh-Qyy"/>
                             <constraint firstItem="GUr-5E-oTW" firstAttribute="trailing" secondItem="Bvw-da-mgf" secondAttribute="trailing" constant="10" id="WVp-mI-tQh"/>
                             <constraint firstItem="GUr-5E-oTW" firstAttribute="trailing" secondItem="4PH-Kd-LxS" secondAttribute="trailing" constant="20" id="Ymq-0L-P9J"/>
                             <constraint firstItem="J0r-p4-hed" firstAttribute="leading" secondItem="GUr-5E-oTW" secondAttribute="leading" constant="11" id="adu-15-cyy"/>
                             <constraint firstItem="Bvw-da-mgf" firstAttribute="top" secondItem="8T1-ZU-2R4" secondAttribute="bottom" id="bV1-K7-tJG"/>
+                            <constraint firstItem="GUr-5E-oTW" firstAttribute="trailing" secondItem="Q3y-UN-BzN" secondAttribute="trailing" constant="20" id="c5k-9b-YyC"/>
                             <constraint firstItem="qng-l8-1T7" firstAttribute="top" secondItem="Bvw-da-mgf" secondAttribute="bottom" constant="50" id="iCC-I9-DBP"/>
                             <constraint firstItem="8T1-ZU-2R4" firstAttribute="top" secondItem="GUr-5E-oTW" secondAttribute="top" constant="13" id="ywj-E2-i87"/>
                         </constraints>
@@ -213,6 +229,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mpc-K4-yU4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="dNx-gt-RWk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2015.9420289855075" y="65.625"/>
         </scene>
@@ -624,7 +641,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My elements" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7S-c7-FuF">
-                                <rect key="frame" x="20" y="263" width="188" height="25"/>
+                                <rect key="frame" x="20" y="263" width="188" height="24.5"/>
                                 <fontDescription key="fontDescription" name="Aero" family="Aero" pointSize="29"/>
                                 <color key="textColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
@@ -636,7 +653,7 @@
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XNH-v9-Sw5">
-                                <rect key="frame" x="20" y="296" width="374" height="495"/>
+                                <rect key="frame" x="20" y="295.5" width="374" height="495"/>
                                 <color key="backgroundColor" red="0.22674661870000001" green="0.25084635620000001" blue="0.26346424219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="3pq-S6-jrR"/>
@@ -690,6 +707,7 @@
                         <outlet property="nameUser" destination="L0E-VQ-egc" id="XSb-ve-x0E"/>
                         <segue destination="AwA-bW-07b" kind="presentation" identifier="editProfile" modalPresentationStyle="fullScreen" id="AMg-33-dRm"/>
                         <segue destination="Ry8-uE-vae" kind="presentation" identifier="logOut" modalPresentationStyle="fullScreen" id="8Fx-Hs-RyB"/>
+                        <segue destination="wX6-0g-bf3" kind="presentation" identifier="settings" modalPresentationStyle="fullScreen" id="pzQ-pV-DVb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sgZ-Pm-c9h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -864,10 +882,10 @@
                                     <constraint firstAttribute="width" constant="106" id="Xam-dg-4Tc"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Share">
+                                <buttonConfiguration key="configuration" style="filled" title="Delete">
                                     <fontDescription key="titleFontDescription" name="Aero" family="Aero" pointSize="20"/>
                                     <directionalEdgeInsets key="contentInsets" top="20" leading="0.0" bottom="20" trailing="0.0"/>
-                                    <color key="baseForegroundColor" red="0.88418585059999999" green="0.84364861250000001" blue="0.488779664" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="baseForegroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="baseBackgroundColor" red="0.4266385734" green="0.45471143720000001" blue="0.47151720520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -942,6 +960,7 @@
                     </view>
                     <connections>
                         <outlet property="Button" destination="ZjF-xo-v9j" id="0Y6-6k-UtJ"/>
+                        <outlet property="favButt" destination="ZjF-xo-v9j" id="EwD-i2-fwZ"/>
                         <outlet property="imageView" destination="7Im-zI-YzO" id="t4J-ba-XBg"/>
                         <outlet property="nameLabel" destination="ho9-2c-q1u" id="JGp-7n-uqF"/>
                         <outlet property="priceLabel" destination="od6-Wd-OK4" id="ClT-em-5GN"/>
@@ -975,6 +994,7 @@
                                     <imageReference key="image" image="arrowshape.turn.up.left.fill" catalog="system" symbolScale="large"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="back:" destination="wX6-0g-bf3" eventType="touchUpInside" id="udj-b6-gPL"/>
                                     <action selector="backEdit:" destination="AwA-bW-07b" eventType="touchUpInside" id="B9t-wH-SJW"/>
                                     <action selector="backItem:" destination="TpA-cY-Yem" eventType="touchUpInside" id="TcR-bg-9R1"/>
                                 </connections>
@@ -985,11 +1005,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RTs-Bf-lgb">
-                                <rect key="frame" x="223" y="288" width="131" height="32"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RTs-Bf-lgb">
+                                <rect key="frame" x="253" y="288" width="101" height="32"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Dark"/>
+                                    <segment title="Light"/>
                                 </segments>
                                 <connections>
                                     <action selector="themeSaved:" destination="wX6-0g-bf3" eventType="valueChanged" id="7Ay-uu-no9"/>
@@ -1133,6 +1153,7 @@
         <image name="Group 257logo" width="43" height="51"/>
         <image name="Vectorforum" width="27" height="27"/>
         <image name="Vectorhome" width="27" height="27"/>
+        <image name="arrow.2.circlepath" catalog="system" width="128" height="101"/>
         <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="106"/>
         <image name="arrowshape.turn.up.left.fill" catalog="system" width="128" height="106"/>
         <image name="camera" catalog="system" width="128" height="94"/>

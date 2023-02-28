@@ -13,13 +13,16 @@ class modViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         self.dismiss(animated: true, completion: nil)
     }
     
+  
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         userName.text = ViewController.user?.name
     }
     override func viewDidLoad() {
 
         super.viewDidLoad()
-
+        keepTheme()
         imagePicker.delegate = self
         
         profileImg()
@@ -60,17 +63,21 @@ class modViewController: UIViewController, UIImagePickerControllerDelegate, UINa
 
     func profileImg(){
         
-        let strBase64 = ViewController.user!.image
-        do {
-            let dataDecoded : Data = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters)!
-            let decodedimage:UIImage = UIImage(data: dataDecoded as Data)!
-            print(decodedimage)
-            image.image = decodedimage
+        if ViewController.user?.image != "" {
+            
+            let strBase64 = ViewController.user!.image
+            do {
+                let dataDecoded : Data = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters)!
+                let decodedimage:UIImage = UIImage(data: dataDecoded as Data)!
+                print(decodedimage)
+                image.image = decodedimage
+            }
+            catch {
+                image.image = UIImage(named: "3.png")
+                print("Error jajaj xd")
+            }
         }
-        catch {
-            image.image = UIImage(named: "3.png")
-            print("Error jajaj xd")
-        }
+       
         
     }
 
@@ -147,6 +154,14 @@ class modViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             }
             
         }.resume()
+    }
+    func keepTheme(){
+        var tema = settingsViewController.finalTheme
+        if tema == "dark"{
+            view.backgroundColor = settingsViewController.getUIColor(hex: "#3A4043")
+        } else if tema == "light"{
+            view.backgroundColor = settingsViewController.getUIColor(hex: "#71787C")
+        }
     }
     
 

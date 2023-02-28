@@ -13,6 +13,10 @@ class settingsViewController: UIViewController {
     let light = "light"
    
     
+    @IBAction func back(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBOutlet weak var themes: UISegmentedControl!
     
     
@@ -32,7 +36,7 @@ class settingsViewController: UIViewController {
         }
         else if tema == light {
             themes.selectedSegmentIndex = 1
-            view.backgroundColor = UIColor.white
+            view.backgroundColor = settingsViewController.getUIColor(hex: "#71787C")
             settingsViewController.finalTheme = "light"
         }
     }
@@ -42,7 +46,7 @@ class settingsViewController: UIViewController {
         switch themes.selectedSegmentIndex{
         case 0: userDefaults.set(dark, forKey: themekey)
             updateTheme()
-        case 1: userDefaults.set(dark, forKey: themekey)
+        case 1: userDefaults.set(light, forKey: themekey)
             updateTheme()
         default: userDefaults.set(dark, forKey: themekey)
         }

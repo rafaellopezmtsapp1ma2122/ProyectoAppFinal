@@ -24,7 +24,7 @@ class profileViewController: UIViewController,UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         //Cargamos la imagen de perfil
-        
+        keepTheme()
         if ViewController.user?.image != ""{
             profileImg()
         }
@@ -60,7 +60,7 @@ class profileViewController: UIViewController,UITableViewDataSource, UITableView
             //Variable para boton settings
             UIAction(title: "Settings", handler: { (_) in print("Settings")
 
-                
+                self.performSegue(withIdentifier: "settings", sender: UIAction.self)
 
             }),
             
@@ -81,21 +81,25 @@ class profileViewController: UIViewController,UITableViewDataSource, UITableView
    
     //Función para la conversión de la imagen de Base64 a imagen y poderla implementarla en el lugar correspondiente
     func profileImg(){
+        
        
-        let strBase64 = ViewController.imageUser!
-        do {
-            //Generamos las variable de las diferentes imagenes tanto codificadas como para codificar
-            let dataDecoded : Data = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters)!
-            let decodedimage:UIImage = UIImage(data: dataDecoded as Data)!
-            print(decodedimage)
-            //Colocamos la imagen en su lugar correspondiente
-            imageUser.image = decodedimage
-        }
-        catch {
-            //Si se produce algun error colocamos una imagen por defecto y imprimimos un error
-            imageUser.image = UIImage(named: "3.png")
-            print("Error jajaj xd")
-        }
+            let strBase64 = ViewController.imageUser ?? ""
+            do {
+                //Generamos las variable de las diferentes imagenes tanto codificadas como para codificar
+                let dataDecoded : Data = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters)!
+                let decodedimage:UIImage = UIImage(data: dataDecoded as Data)!
+                print(decodedimage)
+                //Colocamos la imagen en su lugar correspondiente
+                imageUser.image = decodedimage
+            }
+            catch {
+                //Si se produce algun error colocamos una imagen por defecto y imprimimos un error
+                imageUser.image = UIImage(named: "Group 227profile.png")
+                print("Error jajaj xd")
+            }
+        
+       
+       
        
     }
     //Funcion para el conteo de los elementos los cuales se van a añadir a ese table view
@@ -124,6 +128,15 @@ class profileViewController: UIViewController,UITableViewDataSource, UITableView
         
        
         return cell
+    }
+    
+    func keepTheme(){
+        var tema = settingsViewController.finalTheme
+        if tema == "dark"{
+            view.backgroundColor = settingsViewController.getUIColor(hex: "#3A4043")
+        } else if tema == "light"{
+            view.backgroundColor = settingsViewController.getUIColor(hex: "#71787C")
+        }
     }
 
 

@@ -19,6 +19,7 @@ class chatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        keepTheme()
         autoUpdate()
         let nib = UINib(nibName: "chatViewCell", bundle: nil)
         chatView.register(nib, forCellReuseIdentifier: "chatViewCell")
@@ -97,6 +98,14 @@ class chatViewController: UIViewController,UITableViewDataSource,UITableViewDele
     override func viewWillAppear(_ animated: Bool) {
        
         textoChat.text = chat?.nameUser
+    }
+    func keepTheme(){
+        var tema = settingsViewController.finalTheme
+        if tema == "dark"{
+            view.backgroundColor = settingsViewController.getUIColor(hex: "#3A4043")
+        } else if tema == "light"{
+            view.backgroundColor = settingsViewController.getUIColor(hex: "#71787C")
+        }
     }
     
    /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

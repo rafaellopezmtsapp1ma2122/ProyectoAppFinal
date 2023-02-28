@@ -15,6 +15,7 @@ class createItemViewController: UIViewController, UIImagePickerControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        keepTheme()
         imagePicker.delegate = self
         des.backgroundColor = UIColor.white
         des.layer.masksToBounds = true
@@ -44,9 +45,9 @@ class createItemViewController: UIViewController, UIImagePickerControllerDelegat
             
             // Le damos los datos del Array.
           
-            let body: [String: Any] = ["name": name.text ?? "Empty", "image": strBase64, "price": Int(price.text!) ?? 0, "description": des.text ?? "Empty","user": ViewController.user?.email ?? "", "favorite": 0 ]
+            let body: [String: Any] = ["name": name.text ?? "Empty", "image": strBase64, "price": Int(price.text!) ?? 0, "description": des.text ?? "Empty","user": ViewController.email!]
             var request = URLRequest(url: url)
-            
+         
             // Pasamos a Json el Array.
             
             let finalBody = try? JSONSerialization.data(withJSONObject: body)
@@ -95,6 +96,14 @@ class createItemViewController: UIViewController, UIImagePickerControllerDelegat
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) { // Si se cancela, regresa de nuevo.
         self.dismiss(animated: true, completion: nil)
+    }
+    func keepTheme(){
+        var tema = settingsViewController.finalTheme
+        if tema == "dark"{
+            view.backgroundColor = settingsViewController.getUIColor(hex: "#3A4043")
+        } else if tema == "light"{
+            view.backgroundColor = settingsViewController.getUIColor(hex: "#71787C")
+        }
     }
 
 }

@@ -19,6 +19,7 @@ class forumViewController: UIViewController,UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        keepTheme()
         autoUpdate()
         let nib = UINib(nibName: "forumTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "forumTableViewCell")
@@ -84,7 +85,7 @@ class forumViewController: UIViewController,UITableViewDataSource, UITableViewDe
         let cell = tableView.dequeueReusableCell(withIdentifier: "forumTableViewCell", for: indexPath) as! forumTableViewCell
         cell.name.text = tabla[indexPath.row].nameForum
         cell.num.text = "1234"
-        let strBase64 = tabla[indexPath.row].imagen
+        let strBase64 = tabla[indexPath.row].imagen ?? ""
         do {
             let dataDecoded : Data = Data(base64Encoded: strBase64, options: .ignoreUnknownCharacters)!
             let decodedimage:UIImage = UIImage(data: dataDecoded as Data)!
@@ -109,6 +110,14 @@ class forumViewController: UIViewController,UITableViewDataSource, UITableViewDe
             let ChatViewController = segue.destination as! chatViewController
             let chat = sender as! Forum
             ChatViewController.chat = chat
+        }
+    }
+    func keepTheme(){
+        var tema = settingsViewController.finalTheme
+        if tema == "dark"{
+            view.backgroundColor = settingsViewController.getUIColor(hex: "#3A4043")
+        } else if tema == "light"{
+            view.backgroundColor = settingsViewController.getUIColor(hex: "#71787C")
         }
     }
 }

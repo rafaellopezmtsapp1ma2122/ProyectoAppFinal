@@ -5,8 +5,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         // Do any additional setup after loading the view.
     }
+    
+    static var email: String?
     
     static var token: String?
     
@@ -18,6 +21,7 @@ class ViewController: UIViewController {
     
     static var user: User?
     
+    
     //let jsonString = [String: Any]
 
     
@@ -25,8 +29,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var myEmail: UITextField!
        
-    @IBOutlet weak var myPaswd: UITextField!
-    
+    @IBOutlet weak  var myPaswd: UITextField!
     
     
     @IBAction func register(_ sender: UIButton) {
@@ -76,6 +79,7 @@ class ViewController: UIViewController {
                 print("\n\n\n")
                 print(String(data: data, encoding: .utf8)!)
                 print(data)
+                
                 do {
                     
                     let decoder = JSONDecoder()
@@ -93,12 +97,11 @@ class ViewController: UIViewController {
                 
                 
                 //Recibimos la respuesta del servido si existe o no el usuario enviado y devuelve correcto o incorrecto y ya mandamos a la página correspondiente.
-                print(String(data: data, encoding: .utf8)!)
-                print(recibi!)
+                
                 if recibi! != "No se ha encontrado el usuario"{
                     
                     if recibi! != "La contraseña es incorrecta."{
-                        
+                        ViewController.email = myEmail.text!
                         DispatchQueue.main.sync {
                             self.performSegue(withIdentifier: "goHome", sender: sender)
                         }

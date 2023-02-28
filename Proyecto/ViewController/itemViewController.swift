@@ -10,10 +10,57 @@ class itemViewController: UIViewController {
     @IBOutlet weak var tectLabel: UITextView!
     @IBOutlet weak var priceLabel: UILabel!
     
+    @IBOutlet weak var favButt: UIButton!
     @IBAction func share(_ sender: Any) {
+        if item?.user == ViewController.email{
+            guard let url = URL(string:"http://127.0.0.1:5000/deleteItem")
+            else {
+                return
+            }
+            
+            // Le damos los datos del Array.
+          
+            let body: [String: Any] = ["user": item?.user ?? "Empty", "name": nameLabel.text! ]
+            var request = URLRequest(url: url)
+         
+            // Pasamos a Json el Array.
+            
+            let finalBody = try? JSONSerialization.data(withJSONObject: body)
+            request.httpMethod = "POST"
+            request.httpBody = finalBody //
+            
+            // add headers for the request
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type") // change as per server requirements
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+            
+            URLSession.shared.dataTask(with: request){
+                (data, response, error) in
+                print(response as Any)
+                // Imprime el error en caso de que haya un fallo
+                if let error = error {
+                    print(error)
+                    return
+                }
+                guard let data = data else{
+                    print("Error al recivir data.")
+                    return
+                }
+                print("\n\n\n")
+                print(data, String(data: data, encoding: .utf8) ?? "*unknown encoding*")
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: nil)
+                }
+                
+            }.resume()
+        
+        }
+        
     }
     @IBAction func edit(_ sender: Any) {
-       
+        
+        
+        
+    
     }
     @IBAction func backItem(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -43,6 +90,7 @@ class itemViewController: UIViewController {
                    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        keepTheme()
         priceLabel.layer.masksToBounds = true
         priceLabel.layer.cornerRadius = 10
         tagLabel.layer.masksToBounds = true
@@ -79,6 +127,16 @@ class itemViewController: UIViewController {
         tectLabel.text = item?.text
         priceLabel.text = item?.stringPrice
         priceLabel.textColor = UIColor.white
+        favButt.isSelected = item?.fav ?? false
+    }
+    
+    func keepTheme(){
+        var tema = settingsViewController.finalTheme
+        if tema == "dark"{
+            view.backgroundColor = settingsViewController.getUIColor(hex: "#3A4043")
+        } else if tema == "light"{
+            view.backgroundColor = settingsViewController.getUIColor(hex: "#71787C")
+        }
     }
     
     

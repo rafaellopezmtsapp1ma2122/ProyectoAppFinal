@@ -11,6 +11,7 @@ class createForumViewController: UIViewController, UIImagePickerControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        keepTheme()
         imagePicker.delegate = self
     }
     
@@ -81,6 +82,14 @@ class createForumViewController: UIViewController, UIImagePickerControllerDelega
     //Cerramos el image picker al seleccionar la imagen
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) { // Si se cancela, regresa de nuevo.
         self.dismiss(animated: true, completion: nil)
+    }
+    func keepTheme(){
+        var tema = settingsViewController.finalTheme
+        if tema == "dark"{
+            view.backgroundColor = settingsViewController.getUIColor(hex: "#3A4043")
+        } else if tema == "light"{
+            view.backgroundColor = settingsViewController.getUIColor(hex: "#71787C")
+        }
     }
 
 }
